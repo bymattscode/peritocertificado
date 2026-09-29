@@ -14,19 +14,33 @@
 * { box-sizing: border-box; }
 body { margin: 0; background: #F1F1F1; color: #181C23; font-family: 'IBM Plex Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
 a { color: #8A6224; }
+html { scroll-behavior: smooth; }
+header a:hover { transform: translateY(-2px); }
+header a { transition: transform 200ms ease; }
 main a:hover { border-color: #CF9A44 !important; transform: translateY(-3px); }
 </style>
 </head>
 <body>
-<header style="background: #0B0B0C; color: #F1F1F1; padding: clamp(56px, 8vw, 104px) 0 clamp(48px, 6vw, 80px)">
+<header style="position: relative; overflow: hidden; background-color: #0B0B0C; background-image: linear-gradient(90deg, rgba(11,11,12,0.97) 0%, rgba(11,11,12,0.9) 42%, rgba(11,11,12,0.35) 100%), url('https://peritocertificado.com/wp-content/uploads/2026/09/IM_SITE.png'); background-size: cover; background-position: center right; color: #F1F1F1; padding: clamp(56px, 8vw, 112px) 0 clamp(56px, 7vw, 96px)">
   <div style="max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem)">
-    <img src="https://peritocertificado.com/wp-content/uploads/2026/09/perito-certificado-logo.png" alt="Perito Certificado" style="width: 160px; height: auto; display: block; margin-bottom: 40px">
-    <p style="display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #CF9A44; margin: 0 0 20px"><span style="width: 42px; height: 1px; background: #CF9A44"></span>Portfólio</p>
-    <h1 style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 20px">Perito Certificado</h1>
-    <p style="font-size: 1.125rem; line-height: 1.68; color: rgba(241,241,241,0.8); margin: 0; max-width: 58ch">Site institucional, landing pages dos cursos e páginas legais, com o mesmo sistema visual: Sora e IBM Plex Sans, azul <code>#12243C</code> e dourado <code>#CF9A44</code>.</p>
+    <img src="https://peritocertificado.com/wp-content/uploads/2026/09/perito-certificado-logo.png" alt="Perito Certificado" style="width: 150px; height: auto; display: block; margin-bottom: clamp(40px, 5vw, 64px)">
+    <p style="display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #CF9A44; margin: 0 0 22px"><span style="width: 42px; height: 1px; background: #CF9A44"></span>Portfólio · Web design</p>
+    <h1 style="font-family: 'Sora', sans-serif; font-weight: 600; font-size: clamp(2.4rem, 5.4vw, 4rem); line-height: 1.06; letter-spacing: -0.022em; margin: 0 0 24px; max-width: 16ch; text-wrap: balance">Perito Certificado</h1>
+    <p style="font-size: clamp(1.0625rem, 1.4vw, 1.1875rem); line-height: 1.7; color: #FFFFFF; margin: 0 0 32px; max-width: 54ch; text-wrap: pretty">Presença digital completa de uma plataforma de formação em perícia judicial: site institucional, sete landing pages de cursos, dois e-books e as páginas legais. Doze páginas com a mesma identidade visual, pensadas para um público que valoriza credibilidade e leitura confortável.</p>
+    <ul style="list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 40px; padding: 0">
+      <li style="border: 1px solid rgba(241,241,241,0.28); border-radius: 999px; padding: 9px 16px; font-size: 0.8125rem; font-weight: 500; color: #F1F1F1">HTML</li>
+      <li style="border: 1px solid rgba(241,241,241,0.28); border-radius: 999px; padding: 9px 16px; font-size: 0.8125rem; font-weight: 500; color: #F1F1F1">CSS</li>
+      <li style="border: 1px solid rgba(241,241,241,0.28); border-radius: 999px; padding: 9px 16px; font-size: 0.8125rem; font-weight: 500; color: #F1F1F1">JavaScript</li>
+      <li style="border: 1px solid rgba(241,241,241,0.28); border-radius: 999px; padding: 9px 16px; font-size: 0.8125rem; font-weight: 500; color: #F1F1F1">WordPress · Elementor</li>
+      <li style="border: 1px solid rgba(241,241,241,0.28); border-radius: 999px; padding: 9px 16px; font-size: 0.8125rem; font-weight: 500; color: #F1F1F1">Responsivo</li>
+    </ul>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px">
+      <a href="#paginas" style="display: inline-flex; align-items: center; min-height: 52px; padding: 14px 28px; border-radius: 999px; background: linear-gradient(150deg, #DBA84E, #C08A34); color: #181C23; font-weight: 600; font-size: 0.9375rem; text-decoration: none">Ver as páginas</a>
+      <a href="https://peritocertificado.com" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; min-height: 52px; padding: 14px 28px; border-radius: 999px; border: 1px solid rgba(241,241,241,0.4); color: #F1F1F1; font-weight: 600; font-size: 0.9375rem; text-decoration: none">Visitar o site no ar</a>
+    </div>
   </div>
 </header>
-<main style="padding: clamp(56px, 7vw, 96px) 0">
+<main id="paginas" style="padding: clamp(56px, 7vw, 96px) 0; scroll-margin-top: 0">
   <div style="max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem)">
     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 20px">
       <a href="./perito-certificado/" style="display: flex; flex-direction: column; gap: 12px; padding: 28px 26px; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; text-decoration: none; transition: border-color 300ms ease, transform 300ms ease">
