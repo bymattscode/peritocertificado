@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perito Certificado — Perito Certificado</title>
+<meta name="description" content="Plataforma de formação e capacitação pericial conduzida por Jacqueline Tirotti.">
+<meta name="theme-color" content="#12243C">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Perito Certificado — Perito Certificado">
+<meta property="og:description" content="Plataforma de formação e capacitação pericial conduzida por Jacqueline Tirotti.">
+<meta property="og:image" content="https://peritocertificado.com/wp-content/uploads/2026/09/perito-certificado-logo.png">
+<link rel="icon" href="https://peritocertificado.com/wp-content/uploads/2026/09/perito-certificado-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --gx-display: 'Sora', system-ui, sans-serif;
+  --gx-num: 'Sora', system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #F1F1F1; color: #181C23; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 18px; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img, svg { display: block; max-width: 100%; }
+a { color: #8A6224; text-decoration: none; }
+a:hover { color: #181C23; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid #CF9A44; outline-offset: 3px; }
+h1, h2, h3 { text-transform: var(--gx-tt, none); }
+.gx-perfil > h3, .gx-perfil > p { grid-column: 2; }
+@media (min-width: 760px) { .gx-perfil { grid-template-columns: 44px minmax(0, 300px) minmax(0, 1fr) !important; } .gx-perfil > p { grid-column: 3; grid-row: 1; } }
+@media (min-width: 1280px) { .gx-cert-img { width: 112% !important; max-width: none !important; margin-left: -12%; margin-right: 0; } }
+@keyframes gx-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* Reveal: [data-gxr] começa oculto; o IntersectionObserver aplica .is-in / .is-out */
+[data-gxr] { opacity: 0; transform: translateY(26px); }
+[data-gxr="fade"] { transform: none; }
+[data-gxr="left"] { transform: translateX(-30px); }
+[data-gxr="right"] { transform: translateX(30px); }
+[data-gxr="zoom"] { transform: scale(0.965); }
+[data-gxr] { transition: opacity 760ms cubic-bezier(0.16,1,0.3,1), transform 860ms cubic-bezier(0.16,1,0.3,1), filter 760ms ease; }
+[data-gxr].is-in { opacity: 1; transform: none; filter: none; transition-delay: var(--gxd, 0ms); }
+[data-gxr].is-out { opacity: 0; transform: translateY(-22px) scale(0.985); filter: blur(3px); transition-delay: 0ms; }
+
+/* Filete dos rótulos */
+[data-gxr] [aria-hidden="true"][style*="height: 1px"] { transform: scaleX(0); transform-origin: left center; }
+[data-gxr].is-in [aria-hidden="true"][style*="height: 1px"] { transform: scaleX(1); transition: transform 900ms cubic-bezier(0.16,1,0.3,1) 220ms; }
+
+/* Progresso de leitura (largura atualizada no scroll) */
+.gx-progress { position: fixed; top: 0; left: 0; height: 2px; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, #8A6224, #CF9A44 55%, #F0CE8E); z-index: 300; pointer-events: none; }
+
+/* .gx-lume: brilho de cursor desativado (opacity 0); a classe continua porque o JS depende dela */
+.gx-lume { position: relative; isolation: isolate; }
+.gx-lume::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity 420ms ease; background: radial-gradient(300px circle at var(--mx, 50%) var(--my, 50%), rgba(207,154,68,0.16), transparent 62%); z-index: 2; }
+@media (hover: none) { .gx-lume::after { display: none; } }
+.gx-lume:hover::after { opacity: 0; }
+.gx-lume { transition: transform 520ms cubic-bezier(0.16,1,0.3,1), box-shadow 520ms cubic-bezier(0.16,1,0.3,1), border-color 520ms ease; }
+.gx-lume:hover { transform: translateY(-4px); }
+
+/* Nav: sublinhado */
+[data-gxnav] { position: relative; }
+[data-gxnav]::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: #CF9A44; transform: scaleX(0); transform-origin: right center; transition: transform 420ms cubic-bezier(0.16,1,0.3,1); }
+[data-gxnav]:hover::after { transform: scaleX(1); transform-origin: left center; }
+
+/* Hero: halo de fundo */
+@keyframes gx-pulso { 0%, 100% { opacity: 0.35; } 50% { opacity: 0.6; } }
+.gx-halo { position: absolute; inset: auto auto 0 0; width: min(680px, 60vw); height: 340px; pointer-events: none; background: radial-gradient(closest-side, rgba(207,154,68,0.22), transparent 72%); animation: gx-pulso 9s ease-in-out infinite; contain: strict; }
+@keyframes gx-clareia { from { opacity: 0; transform: translateY(24px) scale(1.02); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+
+/* Variáveis */
+:root {
+  --gx-ouro: #CF9A44;
+  --gx-ouro-claro: #F0CE8E;
+  --gx-ouro-escuro: #8A6224;
+  --gx-tinta: #181C23;
+  --gx-azul: #12243C;
+  --gx-azul-claro: #24487A;
+  --gx-r-sm: 10px;
+  --gx-r-md: 14px;
+  --gx-r-lg: 20px;
+  --gx-r-pill: 999px;
+  --gx-e-suave: cubic-bezier(0.22, 1, 0.36, 1);
+  --gx-e-saida: cubic-bezier(0.16, 1, 0.3, 1);
+  --gx-t-rapido: 220ms;
+  --gx-t-medio: 420ms;
+  --gx-t-longo: 820ms;
+  --gx-sombra-1: 0 2px 6px rgba(20,24,32,0.05), 0 10px 28px rgba(20,24,32,0.07);
+  --gx-sombra-2: 0 4px 12px rgba(20,24,32,0.07), 0 22px 60px rgba(20,24,32,0.12);
+  --gx-sombra-ouro: 0 14px 40px rgba(207,154,68,0.28);
+}
+
+/* Tipografia */
+h1, h2 { font-feature-settings: "ss01", "liga", "kern"; }
+h2 { position: relative; }
+p, li { text-wrap: pretty; }
+
+/* Títulos: entrada */
+@keyframes gx-mask-up { from { opacity: 0; transform: translateY(0.42em); filter: blur(5px); } to { opacity: 1; transform: none; filter: none; } }
+[data-gxr] h2, [data-gxr] > h3 { opacity: 0; }
+[data-gxr].is-in h2, [data-gxr].is-in > h3 { animation: gx-mask-up 900ms var(--gx-e-saida) 120ms both; }
+
+/* Divisória entre seções */
+section { position: relative; }
+section + section::before {
+  content: "";
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: min(1160px, 92vw); height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(207,154,68,0.42), transparent);
+  opacity: 0.85;
+}
+
+#gx-lp header[data-gxhdr] > div { max-width: 1160px !important; justify-content: center !important; margin-left: auto !important; margin-right: auto !important; box-sizing: border-box !important; }
+
+/* Cartões [data-gxlume]: raio e sombra padronizados */
+[data-gxlume] {
+  border-radius: var(--gx-r-md) !important;
+  box-shadow: var(--gx-sombra-1) !important;
+  transition: transform var(--gx-t-medio) var(--gx-e-suave), box-shadow var(--gx-t-medio) var(--gx-e-suave), border-color var(--gx-t-medio) ease !important;
+}
+[data-gxlume]:hover { box-shadow: var(--gx-sombra-2) !important; }
+
+
+/* O tema estiliza todo <button>; volta ao estilo do componente */
+#gx-lp #hero a[href="#cursos"] { background: linear-gradient(150deg, rgba(255,255,255,0.96), rgba(241,241,241,0.9)) !important; color: #181C23 !important; border: 1px solid rgba(255,255,255,0.6) !important; text-shadow: none !important; }
+#gx-lp a[style*="border-radius: 999px"] { text-decoration: none !important; }
+
+/* Nav: fundo azul no hover e na seção visível */
+#gx-lp [data-gxnav]::after { display: none !important; }
+#gx-lp [data-gxnav] { align-items: center !important; justify-content: center !important; min-height: 40px !important; line-height: 1 !important; padding: 0 16px !important; border-radius: 999px !important; border-bottom: 0 !important; transition: background 320ms var(--gx-e-suave), color 320ms ease !important; }
+#gx-lp [data-gxnav]:hover { background: linear-gradient(150deg, #24487A, #16294A) !important; color: #F1F1F1 !important; }
+#gx-lp [data-gxnav].is-ativo { background: linear-gradient(150deg, #24487A, #16294A) !important; color: #F1F1F1 !important; }
+
+#gx-lp #hero a[href="#cursos"] { transition: background 340ms ease, color 340ms ease, border-color 340ms ease, box-shadow 340ms ease !important; }
+#gx-lp #hero a[href="#cursos"]:hover { background: linear-gradient(150deg, #DBA84E, #C08A34) !important; border-color: rgba(207,154,68,0.95) !important; color: #181C23 !important; }
+
+/* Botões */
+a[href^="http"][style*="border-radius: 999px"],
+a[href^="#"][style*="border-radius: 999px"] {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform var(--gx-t-rapido) var(--gx-e-suave), box-shadow var(--gx-t-medio) var(--gx-e-suave), filter var(--gx-t-medio) ease !important;
+}
+a[style*="border-radius: 999px"]::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.42) 50%, transparent 65%);
+  transform: translateX(-130%);
+  transition: transform 900ms var(--gx-e-saida);
+  z-index: 1;
+}
+a[style*="border-radius: 999px"]:hover::before { transform: translateX(130%); }
+a[style*="border-radius: 999px"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 18px 40px rgba(20,24,32,0.26) !important;
+}
+a[style*="border-radius: 999px"]:active { transform: translateY(0) scale(0.985) !important; }
+a[style*="border-radius: 999px"] > * { position: relative; z-index: 2; }
+
+/* FAQ: transição do painel */
+button[data-gxfaq] { transition: background var(--gx-t-rapido) ease, padding-left var(--gx-t-medio) var(--gx-e-suave) !important; }
+button[data-gxfaq]:hover { padding-left: 32px !important; background: rgba(207,154,68,0.06) !important; }
+button[data-gxfaq] span[aria-hidden="true"] { transition: transform var(--gx-t-medio) var(--gx-e-suave), color var(--gx-t-rapido) ease; }
+button[data-gxfaq][aria-expanded="true"] span[aria-hidden="true"] { transform: rotate(180deg) scale(1.1); color: var(--gx-ouro) !important; }
+@keyframes gx-abre { from { opacity: 0; transform: translateY(-8px); clip-path: inset(0 0 100% 0); } to { opacity: 1; transform: none; clip-path: inset(0 0 0 0); } }
+div[role="region"][aria-labelledby] { animation: gx-abre 520ms var(--gx-e-saida) both; }
+
+/* Borda dos cartões: cinza, dourada no hover */
+[data-gxlume] {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid rgba(24,28,35,0.16) !important;
+  border-top: 1px solid rgba(24,28,35,0.16) !important;
+  transition: border-color 420ms var(--gx-e-suave), transform var(--gx-t-medio) var(--gx-e-suave), box-shadow var(--gx-t-medio) var(--gx-e-suave) !important;
+}
+[data-gxlume][data-gxdark] {
+  border: 1px solid rgba(241,241,241,0.22) !important;
+  border-top: 1px solid rgba(241,241,241,0.22) !important;
+}
+[data-gxlume]:hover, [data-gxlume][data-gxdark]:hover {
+  border-color: #CF9A44 !important;
+}
+
+/* Botão do cabeçalho */
+header a[href][style*="min-height: 48px"]:hover { border-color: #CF9A44 !important; }
+
+/* [data-gxzoom]: zoom no hover */
+img[data-gxzoom] { transition: transform 1400ms cubic-bezier(0.33,1,0.68,1) 140ms, filter 1200ms ease 140ms !important; }
+img[data-gxzoom]:hover { transform: scale(1.03); filter: drop-shadow(0 30px 60px rgba(24,28,35,0.24)); }
+#sobre img[data-gxzoom]:hover { transform: scale(1.045) translateY(-6px); filter: drop-shadow(0 26px 52px rgba(0,0,0,0.45)) drop-shadow(0 0 26px rgba(207,154,68,0.22)); }
+.gx-cert-img { transition: transform 1400ms cubic-bezier(0.33,1,0.68,1) 140ms, filter 1200ms ease 140ms; }
+.gx-cert-img:hover { animation-play-state: paused; transform: scale(1.03) !important; filter: drop-shadow(0 34px 64px rgba(0,0,0,0.5)); }
+
+/* Selos do hero */
+li[data-gxselo] { transition: border-color 420ms var(--gx-e-suave), background 420ms ease, transform 420ms var(--gx-e-suave) !important; }
+li[data-gxselo]:hover { border-color: #CF9A44 !important; background: rgba(207,154,68,0.12) !important; transform: translateY(-3px); }
+li[data-gxselo] i { transition: transform 520ms var(--gx-e-saida); }
+li[data-gxselo]:hover i { transform: scale(1.18) rotate(-6deg); }
+li[data-gxcred] { transition: padding-left 460ms var(--gx-e-suave), border-color 460ms ease, background 460ms ease; }
+li[data-gxcred]:hover { padding-left: 14px; border-bottom-color: #CF9A44 !important; background: linear-gradient(90deg, rgba(207,154,68,0.10), rgba(207,154,68,0)); }
+li[data-gxcred] i { transition: transform 520ms var(--gx-e-suave), color 460ms ease; }
+li[data-gxcred]:hover i { transform: scale(1.15); color: #8A6224 !important; }
+li[data-gxcred] span { transition: color 460ms ease; }
+li[data-gxcred]:hover span { color: #181C23 !important; }
+#matricula li[data-gxselo]:hover { transform: scale(1.06); background: rgba(207,154,68,0.14) !important; }
+
+/* Foto da professora */
+figure[data-gxfoto]:hover { border-color: #CF9A44 !important; box-shadow: var(--gx-sombra-2); }
+figure[data-gxfoto] img { transition: transform 900ms var(--gx-e-saida) !important; }
+figure[data-gxfoto]:hover img { transform: scale(1.05); }
+
+/* Listas: deslocamento no hover */
+li[data-gxlume]:hover { transform: translateY(-3px) !important; }
+button[aria-controls]:not([data-gxfaq]) { transition: transform var(--gx-t-rapido) var(--gx-e-suave), border-color var(--gx-t-rapido) ease, background var(--gx-t-rapido) ease !important; }
+button[aria-controls]:not([data-gxfaq]):hover { transform: translateX(4px) !important; }
+
+/* Seções escuras */
+#sobre-formacao, #certificado, footer { position: relative; }
+#certificado, footer { overflow: hidden; contain: paint; }
+#sobre-formacao::after { inset: 0 0 auto auto !important; width: min(560px, 50vw) !important; }
+@media (max-width: 960px) { #sobre-formacao [data-gxlume] { position: static !important; } }
+@media (max-width: 760px) { #ementa [style*="position: sticky"] { position: static !important; } }
+[data-gxlume] { contain: paint; }
+#sobre-formacao::after, #certificado::after { content: none; }
+@keyframes gx-deriva { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-6%, 5%, 0) scale(1.12); } }
+
+/* Certificado: flutuação */
+@keyframes gx-flutua { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.gx-cert-img { animation: gx-flutua 9s ease-in-out infinite; }
+
+/* Cabeçalho: blur de fundo depois do primeiro scroll */
+header { backdrop-filter: blur(16px) saturate(150%); -webkit-backdrop-filter: blur(16px) saturate(150%); background: rgba(241,241,241,0.86) !important; transition: background var(--gx-t-medio) ease, box-shadow var(--gx-t-medio) ease, border-color var(--gx-t-medio) ease !important; }
+
+/* CTA final e rodapé */
+footer::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gx-ouro), transparent);
+}
+
+/* Foco de teclado */
+:focus-visible { outline: 2px solid var(--gx-ouro) !important; outline-offset: 4px !important; border-radius: 4px; }
+
+/* ::selection */
+::selection { background: rgba(207,154,68,0.28); color: var(--gx-tinta); }
+
+/* Depoimentos: o transform dos trilhos vem do JS; não animar aqui */
+#depoimentos [data-gxtrack] { will-change: transform; }
+#depoimentos [data-gxtrack] * { animation: none; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
+
+
+[data-gxh="1"]:focus { left: 12px !important; top: 12px !important }
+/* Hover de botões e links por atributo, não por posição */
+#gx-lp a[style*="border-radius: 999px"]:hover { filter: brightness(1.04); }
+#gx-lp footer a:hover { color: #F0CE8E !important; }
+#gx-lp #cursos a:hover, #gx-lp #redes a:hover { filter: brightness(1.06); }
+
+/* WordPress / Elementor */
+#gx-lp { position: relative; width: 100%; max-width: 100%; background: #F1F1F1; }
+#gx-lp *, #gx-lp *::before, #gx-lp *::after { box-sizing: border-box; }
+/* Remove fundo, largura e padding que o tema aplica nos containers do widget */
+#gx-lp { display: block; }
+/* Logado no WP, a #wpadminbar cobre o header fixo */
+body.admin-bar #gx-lp > header { top: 32px; }
+@media screen and (max-width: 782px) { body.admin-bar #gx-lp > header { top: 46px; } }
+/* Alguns temas aplicam borda e raio em section/header */
+#gx-lp > header, #gx-lp > section, #gx-lp > footer { border-radius: 0; }
+/* ≤1024px: sem reveal, sticky e zoom no scroll */
+@media (max-width: 1024px) {
+  #gx-lp figure[data-gxfoto] { position: static !important; top: auto !important; }
+  #gx-lp [data-gxzoom], #gx-lp [data-gxfoto] img { transform: none !important; }
+  #gx-lp [data-gxr], #gx-lp [data-gxr].is-out { opacity: 1 !important; transform: none !important; filter: none !important; }
+  #gx-lp [style*="width: max-content"]:not([data-gxtrack]) { width: auto !important; max-width: 100% !important; }
+  #gx-lp [style*="flex: 1 1"], #gx-lp [style*="display: flex"] > * { min-width: 0 !important; }
+  #gx-lp h1, #gx-lp h2, #gx-lp h3, #gx-lp p, #gx-lp li, #gx-lp span { overflow-wrap: break-word; }
+  #gx-lp [style*="grid-template-columns"] { grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)) !important; }
+  #gx-lp #beneficios [style*="grid-template-columns"], #gx-lp #numeros [style*="grid-template-columns"], #gx-lp #redes [style*="grid-template-columns"] { grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)) !important; }
+  #gx-lp img { max-width: 100% !important; height: auto !important; }
+  #gx-lp img[style*="112%"], #gx-lp img.gx-cert-img { width: 100% !important; margin-left: 0 !important; margin-right: 0 !important; }
+  /* Evita scroll horizontal */
+  html, body { overflow-x: hidden !important; max-width: 100% !important; }
+  #gx-lp { overflow: hidden !important; }
+  #gx-lp [data-gxtrack] { transform: none !important; }
+  #gx-lp #depoimentos [data-gxtrack] { width: 100% !important; flex-wrap: wrap !important; }
+  #gx-lp #depoimentos [data-gxtrack] > * { flex: 1 1 100% !important; max-width: 100% !important; }
+  #gx-lp #depoimentos [data-gxtrack] > *:nth-child(n+4) { display: none !important; }
+  #gx-lp #depoimentos [data-gxtrack] { padding-left: 20px !important; padding-right: 20px !important; box-sizing: border-box !important; }
+  #gx-lp #hero { padding-top: 108px !important; padding-bottom: 48px !important; }
+  #gx-lp #hero p br { display: none !important; }
+  #gx-lp #depoimentos [data-gxtrack] > * { max-width: calc(100vw - 40px) !important; }
+  /* min-width 0 deixa flex/grid encolherem; max-width 100% impede vazamento */
+  /* Containers do Elementor trazem width, margin e padding próprios */
+  .elementor-element, .elementor-widget, .elementor-widget-html, .elementor-widget-container,
+  .elementor-container, .elementor-row, .elementor-column, .elementor-column-wrap, .elementor-widget-wrap,
+  .e-con, .e-con-inner, .e-child, .elementor-section, .elementor-section-boxed,
+  .site-content, .content-area, .entry-content, main, article {
+    width: auto !important; max-width: 100% !important; min-width: 0 !important;
+    margin-left: 0 !important; margin-right: 0 !important;
+    padding-left: 0 !important; padding-right: 0 !important;
+  }
+  /* Medidas em vw: o container do tema é mais estreito que a tela */
+  #gx-lp { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw) !important; margin-right: 0 !important; padding: 0 !important; }
+  #gx-lp > header, #gx-lp > section, #gx-lp > footer { width: 100vw !important; max-width: 100vw !important; margin: 0 !important; }
+  #gx-lp > header > div, #gx-lp > section > div, #gx-lp > footer > div,
+  #gx-lp > section > div > div { max-width: 100vw !important; }
+  #gx-lp * { min-width: 0 !important; max-width: 100% !important; }
+  #gx-lp [data-gxlume], #gx-lp [data-gxdark], #gx-lp button, #gx-lp figure, #gx-lp img, #gx-lp ul, #gx-lp ol { max-width: calc(100vw - 40px) !important; }
+  #gx-lp h1, #gx-lp h2, #gx-lp h3, #gx-lp p, #gx-lp li, #gx-lp span, #gx-lp button { overflow-wrap: break-word !important; word-break: normal; hyphens: manual; }
+  /* O tema força nowrap em botões */
+  #gx-lp button, #gx-lp a, #gx-lp button *, #gx-lp a * { white-space: normal !important; }
+  #gx-lp #ementa button, #gx-lp #duvidas button { align-items: flex-start !important; }
+  #gx-lp #ementa button > span, #gx-lp #duvidas button > span { flex: 1 1 auto !important; min-width: 0 !important; overflow-wrap: break-word !important; }
+  #gx-lp #duvidas button > span:last-child, #gx-lp #ementa button > span:first-child { flex: 0 0 auto !important; }
+  #gx-lp > header, #gx-lp > section, #gx-lp > footer { max-width: 100vw !important; }
+  #gx-lp > header > div, #gx-lp > section > div, #gx-lp > footer > div { max-width: 100% !important; }
+  #gx-lp [data-gxlume], #gx-lp [data-gxdark] { max-width: 100% !important; }
+
+}
+
+@media (max-width: 700px) {
+  #gx-lp [style*="position: sticky"] { position: static !important; top: auto !important; }
+}
+
+@media (max-width: 640px) {
+  #gx-lp [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+  #gx-lp #beneficios [style*="grid-template-columns"], #gx-lp #numeros [style*="grid-template-columns"], #gx-lp #redes [style*="grid-template-columns"] { grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)) !important; }
+  /* Cartões azuis: centralizados */
+  #gx-lp #duvidas [data-gxdark], #gx-lp #matricula [data-gxdark] { text-align: center !important; }
+  #gx-lp #duvidas [data-gxdark] p, #gx-lp #matricula [data-gxdark] p { margin-left: auto !important; margin-right: auto !important; }
+  #gx-lp #duvidas [data-gxdark] a, #gx-lp #matricula [data-gxdark] a { justify-content: center !important; }
+  #gx-lp #duvidas [data-gxdark] > div, #gx-lp #matricula [data-gxdark] > div { justify-content: center !important; }
+}
+
+/* scroll-margin = altura do header fixo */
+#gx-lp > section { scroll-margin-top: 96px; }
+
+/* ≤620px */
+@media (max-width: 560px) {
+  /* Uma coluna: em duas, os cards ficavam estreitos demais */
+  #gx-lp #beneficios [style*="grid-template-columns"], #gx-lp #numeros [style*="grid-template-columns"], #gx-lp #redes [style*="grid-template-columns"] { grid-template-columns: 1fr !important; gap: 16px !important; }
+  /* Padding dos cartões */
+  #gx-lp [data-gxlume], #gx-lp #cursos article, #gx-lp #beneficios article, #gx-lp #redes article, #gx-lp #publico li { padding: 24px 22px !important; }
+  #gx-lp #cursos article p, #gx-lp #beneficios article p, #gx-lp #redes article p { max-width: none !important; }
+  /* Espaço entre seções */
+  #gx-lp > section { padding-top: 56px !important; padding-bottom: 56px !important; }
+  #gx-lp > section > div { padding-left: 20px !important; padding-right: 20px !important; }
+  /* Público: afasta o número do texto */
+  #gx-lp #publico li { gap: 14px !important; }
+}
+
+@media (max-width: 620px) {
+  header > div { gap: 12px !important; }
+  header a[aria-label] img { width: 88px !important; }
+  header a[aria-label] > span { display: none !important; }
+  header a[href*="herospark"] { padding: 12px 18px !important; font-size: 0.8125rem !important; }
+  h1 { font-size: clamp(1.9rem, 8.4vw, 2.5rem) !important; }
+  #ementa button > span:last-child { word-break: break-word; }
+}
+
+
+/* FAQ e módulos: o título quebra em várias linhas; número e ícone ficam alinhados ao topo */
+#gx-lp #duvidas button, #gx-lp #ementa button { align-items: flex-start; }
+#gx-lp #duvidas button > span, #gx-lp #ementa button > span { white-space: normal; overflow-wrap: break-word; }
+#gx-lp #duvidas button > span:first-child, #gx-lp #ementa button > span:last-child { flex: 1 1 auto; min-width: 0; }
+#gx-lp #duvidas button > span:last-child, #gx-lp #ementa button > span:first-child { flex: 0 0 auto; }
+</style>
+
+<div id="gx-lp" data-gx-versao="PC-1">
+
+<div class="gx-progress" data-gxprog="1" aria-hidden="true"></div>
+<a href="#hero" style="position: absolute; left: -9999px; top: 0; z-index: 200; background: #181C23; color: #F1F1F1; padding: 14px 22px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase" data-gxh="1">Pular para o conteúdo</a>
+
+<header style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #F1F1F1; border-bottom: 1px solid transparent; transition: border-color 240ms ease, box-shadow 240ms ease; box-shadow: none" data-gxhdr="1">
+  <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); height: 80px; display: flex; align-items: center; justify-content: center; gap: clamp(20px, 2.6vw, 40px)">
+    <a href="#hero" aria-label="Perito Certificado, início" style="display: flex; align-items: center; gap: 16px; flex-shrink: 0; margin-left: -6px">
+      <img src="https://peritocertificado.com/wp-content/uploads/2026/09/perito-certificado-logo.png" alt="Perito Certificado" width="1576" height="457" style="width: 128px; height: auto">
+    </a>
+    <nav aria-label="Navegação principal" style="display: flex; align-items: center; gap: clamp(12px, 1.6vw, 24px); flex-wrap: nowrap">
+      <a href="#beneficios" style="font-size: 0.9375rem; font-weight: 500; color: #3E434B; padding: 8px 0; border-bottom: 1px solid transparent; white-space: nowrap; display: none" data-gxh="2" data-gxnav="1">Benefícios</a>
+      <a href="#cursos" style="font-size: 0.9375rem; font-weight: 500; color: #3E434B; padding: 8px 0; border-bottom: 1px solid transparent; white-space: nowrap; display: none" data-gxh="3" data-gxnav="1">Cursos</a>
+      <a href="#depoimentos" style="font-size: 0.9375rem; font-weight: 500; color: #3E434B; padding: 8px 0; border-bottom: 1px solid transparent; white-space: nowrap; display: none" data-gxh="4" data-gxnav="1">Depoimentos</a>
+      <a href="#duvidas" style="font-size: 0.9375rem; font-weight: 500; color: #3E434B; padding: 8px 0; border-bottom: 1px solid transparent; white-space: nowrap; display: none" data-gxh="5" data-gxnav="1">Dúvidas frequentes</a>
+      <a href="#redes" style="font-size: 0.9375rem; font-weight: 500; color: #3E434B; padding: 8px 0; border-bottom: 1px solid transparent; white-space: nowrap; display: none" data-gxh="6" data-gxnav="1">Redes sociais</a>
+      <a href="https://jactirotti.herospark.co/users/sign_in" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; min-height: 48px; background: transparent; border: 1px solid rgba(24,28,35,0.24); color: #181C23; padding: 14px 24px; border-radius: 999px; font-size: 0.875rem; font-weight: 600; white-space: nowrap; flex-shrink: 0; transition: border-color 260ms ease, background 260ms ease, color 260ms ease" data-gxh="8">Área do Aluno</a>
+      <a href="https://wa.me/5561984133386?text=Oi%2C%20vim%20do%20site%20e%20quero%20saber%20mais%20sobre%20as%20forma%C3%A7%C3%B5es%20do%20Perito%20Certificado" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; min-height: 48px; background: linear-gradient(150deg, #24487A, #16294A); border: 1px solid rgba(241,241,241,0.28); box-shadow: 0 10px 26px rgba(24,28,35,0.18); color: #F1F1F1; padding: 14px 26px; border-radius: 999px; font-size: 0.875rem; font-weight: 600; white-space: nowrap; flex-shrink: 0; transition: transform 180ms ease, box-shadow 180ms ease" data-gxh="7">Entrar em contato</a>
+    </nav>
+  </div>
+</header>
+
+<section id="hero" aria-label="Perito Certificado" style="margin-top: 80px; background-color: #0B0B0C; background-image: linear-gradient(100deg, #0B0B0C 4%, rgba(11,11,12,0.78) 26%, rgba(11,11,12,0.28) 48%, rgba(11,11,12,0.06) 70%, rgba(11,11,12,0) 100%), url('https://peritocertificado.com/wp-content/uploads/2026/09/IM_SITE.png'); background-size: auto, cover; background-position: center, center right; background-repeat: no-repeat, no-repeat; color: #F1F1F1; min-height: clamp(600px, 78vh, 860px); display: flex; align-items: center; padding: clamp(56px, 7vw, 96px) 0; position: relative; overflow: hidden">
+  <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); display: flex; align-items: center; gap: clamp(32px, 5vw, 72px); flex-wrap: wrap">
+    <div style="flex: 1 1 400px; max-width: 660px; animation: gx-clareia 1100ms cubic-bezier(0.16,1,0.3,1) both; position: relative; z-index: 1">
+      <p style="display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #CF9A44; margin: 0 0 30px"><span aria-hidden="true" style="width: 42px; height: 1px; background: rgba(207,154,68,0.75)"></span>Formação e capacitação pericial</p>
+      <h1 style="font-family: var(--gx-display); font-weight: 600; font-size: clamp(2.6rem, 5.4vw, 4.15rem); line-height: 1.06; letter-spacing: -0.022em; margin: 0 0 30px; color: #F1F1F1; text-wrap: balance">Perito Certificado</h1>
+      <p style="font-size: 1.1875rem; line-height: 1.68; color: #FFFFFF; margin: 0 0 40px; max-width: 52ch; text-wrap: pretty">O <strong style="color: #F1F1F1; font-weight: 600">Perito Certificado</strong> reúne as formações mais completas do mercado para quem quer atuar na perícia com base sólida, clareza técnica e posicionamento profissional real.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 14px 18px">
+        <a href="#cursos" style="display: inline-flex; align-items: center; min-height: 56px; background: linear-gradient(150deg, rgba(255,255,255,0.94), rgba(241,241,241,0.86)); backdrop-filter: blur(14px) saturate(130%); -webkit-backdrop-filter: blur(14px) saturate(130%); border: 1px solid rgba(255,255,255,0.6); box-shadow: 0 10px 26px rgba(18,36,60,0.28); color: #181C23; padding: 18px 34px; border-radius: 999px; font-size: 1rem; font-weight: 600; transition: transform 180ms ease, box-shadow 180ms ease" data-gxh="8">Conhecer os cursos</a>
+        <a href="https://wa.me/5561984133386?text=Oi%2C%20vim%20do%20site%20e%20quero%20saber%20mais%20sobre%20as%20forma%C3%A7%C3%B5es%20do%20Perito%20Certificado" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; min-height: 56px; background: rgba(241,241,241,0.09); backdrop-filter: blur(14px) saturate(130%); -webkit-backdrop-filter: blur(14px) saturate(130%); border: 1px solid rgba(241,241,241,0.34); color: #F1F1F1; padding: 18px 32px; border-radius: 999px; font-size: 1rem; font-weight: 600; transition: background 180ms ease, transform 180ms ease" data-gxh="9">Falar com a equipe</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="beneficios" aria-label="Benefícios das formações" style="background: #F1F1F1; padding: clamp(72px, 9vw, 128px) 0">
+  <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem)">
+    <p style="display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #181C23; margin: 0 0 22px"><span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44"></span>Por que estudar aqui</p>
+    <h2 style="font-family: var(--gx-display); font-weight: 600; font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.14; letter-spacing: -0.018em; margin: 0 0 24px; max-width: 40ch; color: #181C23; text-wrap: balance">Cada curso foi desenvolvido para levar você da teoria para a prática com consistência técnica e preparo profissional.</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: clamp(20px, 2.4vw, 28px); margin-top: clamp(40px, 5vw, 56px)">
+      <article data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 16px">
+        <i data-lucide="book-open" stroke-width="1.6" style="width: 26px; height: 26px; color: #CF9A44"></i>
+        <h3 style="font-family: var(--gx-display); font-size: 1.1875rem; font-weight: 600; line-height: 1.28; margin: 0; color: #181C23; text-wrap: balance">Base técnica que sustenta a prática</h3>
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: #4A5058; margin: 0">Grafoscopia, documentoscopia e perícia judicial ensinadas com profundidade, metodologia e estrutura — para que você domine o que faz.</p>
+      </article>
+      <article data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 16px">
+        <i data-lucide="landmark" stroke-width="1.6" style="width: 26px; height: 26px; color: #CF9A44"></i>
+        <h3 style="font-family: var(--gx-display); font-size: 1.1875rem; font-weight: 600; line-height: 1.28; margin: 0; color: #181C23; text-wrap: balance">Aplicação em casos reais</h3>
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: #4A5058; margin: 0">Exercícios, estudos de caso e raciocínio pericial aplicado. Você aprende a pensar como perito — não apenas a repetir conteúdo.</p>
+      </article>
+      <article data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 16px">
+        <i data-lucide="shield-check" stroke-width="1.6" style="width: 26px; height: 26px; color: #CF9A44"></i>
+        <h3 style="font-family: var(--gx-display); font-size: 1.1875rem; font-weight: 600; line-height: 1.28; margin: 0; color: #181C23; text-wrap: balance">Segurança técnica para atuar</h3>
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: #4A5058; margin: 0">Formações que desenvolvem consistência, precisão e clareza na atuação — para que você enfrente casos complexos com firmeza técnica.</p>
+      </article>
+      <article data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 16px">
+        <i data-lucide="target" stroke-width="1.6" style="width: 26px; height: 26px; color: #CF9A44"></i>
+        <h3 style="font-family: var(--gx-display); font-size: 1.1875rem; font-weight: 600; line-height: 1.28; margin: 0; color: #181C23; text-wrap: balance">Posicionamento profissional</h3>
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: #4A5058; margin: 0">Não basta ser bom. É preciso ser reconhecido. Os cursos preparam você para construir autoridade e atuar de forma estratégica na área pericial.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" aria-label="O que é o Perito Certificado" style="background: #12243C; color: #F1F1F1; padding: clamp(72px, 9vw, 128px) 0">
+  <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(36px, 5vw, 72px); align-items: start">
+    <div>
+      <p style="display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #CF9A44; margin: 0 0 22px"><span aria-hidden="true" style="width: 42px; height: 1px; background: rgba(207,154,68,0.75)"></span>A plataforma</p>
+      <h2 style="font-family: var(--gx-display); font-weight: 600; font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.14; letter-spacing: -0.018em; margin: 0 0 clamp(28px, 3.5vw, 40px); max-width: 16ch; color: #F1F1F1; text-wrap: balance">O que é o Perito Certificado?</h2>
+      <img data-gxzoom="1" src="https://peritocertificado.com/wp-content/uploads/2026/09/plataformas-3-scaled.png" alt="As formações do Perito Certificado em notebook, tablet e celular" loading="lazy" style="width: 100%; height: auto; display: block">
+    </div>
+    <div data-gxlume="1" style="background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 14px; padding: clamp(28px, 3.5vw, 40px)">
+      <p style="font-size: 1.0625rem; line-height: 1.74; color: rgba(241,241,241,0.84); margin: 0">O Perito Certificado é uma plataforma de formação especializada em perícia judicial, grafoscopia e documentoscopia — criada para quem quer mais do que assistir aulas. Aqui, cada curso tem estrutura, progressão e profundidade real: você não aprende conceitos soltos, aprende a aplicar, a analisar e a sustentar conclusões com precisão técnica. Do primeiro módulo ao último, o foco é o mesmo — preparar profissionais que saibam exatamente o que estão fazendo dentro de um laudo ou análise pericial.</p>
+    </div>
+  </div>
+</section>
+
+<section id="publico" aria-label="Para quem são os cursos" style="background: #E3E5E8; padding: clamp(72px, 9vw, 128px) 0">
+  <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem)">
+    <p style="display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #181C23; margin: 0 0 22px"><span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44"></span>Perfis atendidos</p>
+    <h2 style="font-family: var(--gx-display); font-weight: 600; font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.14; letter-spacing: -0.018em; margin: 0 0 24px; max-width: 20ch; color: #181C23; text-wrap: balance">Para quem são os cursos</h2>
+    <p style="font-size: 1.125rem; line-height: 1.7; color: #4A5058; margin: 0 0 clamp(36px, 4.5vw, 52px); max-width: 62ch">Os cursos do Perito Certificado atendem profissionais em diferentes momentos da carreira, do primeiro contato com a perícia à especialização avançada.</p>
+    <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: clamp(16px, 2vw, 22px)">
+      <li data-gxlume="1" style="background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 14px; padding: clamp(24px, 3vw, 38px); display: flex; align-items: center; gap: clamp(18px, 2.6vw, 34px); flex-wrap: wrap">
+        <span aria-hidden="true" style="font-family: var(--gx-num); font-size: clamp(2.6rem, 5vw, 4.2rem); font-weight: 700; line-height: 0.9; letter-spacing: -0.03em; color: rgba(241,241,241,0.16); flex: 0 0 auto">01</span>
+        <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <span style="background: rgba(241,241,241,0.10); border: 1px solid rgba(207,154,68,0.45); color: #CF9A44; align-self: flex-start; border-radius: 999px; padding: 7px 14px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.2">Início na perícia</span>
+          <h3 style="font-family: var(--gx-display); font-size: clamp(1.125rem, 1.9vw, 1.375rem); font-weight: 600; line-height: 1.28; margin: 0; color: #F1F1F1; text-wrap: balance">Para quem quer entrar na perícia com segurança</h3>
+          <p style="font-size: 0.9375rem; line-height: 1.68; color: rgba(241,241,241,0.82); margin: 0">Advogados, profissionais de outras áreas e quem ainda não teve contato com a perícia. Formações com base clara, progressão lógica e foco na construção de competência técnica real.</p>
+        </div>
+        <span aria-hidden="true" style="background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); color: #16294A; flex: 0 0 auto; width: 58px; height: 58px; border-radius: 12px; display: flex; align-items: center; justify-content: center">
+          <i data-lucide="compass" stroke-width="1.8" style="width: 24px; height: 24px"></i>
+        </span>
+      </li>
+      <li data-gxlume="1" style="background: rgba(255,255,255,0.68); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(24px, 3vw, 38px); display: flex; align-items: center; gap: clamp(18px, 2.6vw, 34px); flex-wrap: wrap">
+        <span aria-hidden="true" style="font-family: var(--gx-num); font-size: clamp(2.6rem, 5vw, 4.2rem); font-weight: 700; line-height: 0.9; letter-spacing: -0.03em; color: rgba(24,28,35,0.10); flex: 0 0 auto">02</span>
+        <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <span style="background: rgba(207,154,68,0.14); border: 1px solid rgba(207,154,68,0.45); color: #8A6224; align-self: flex-start; border-radius: 999px; padding: 7px 14px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.2">Aprofundamento técnico</span>
+          <h3 style="font-family: var(--gx-display); font-size: clamp(1.125rem, 1.9vw, 1.375rem); font-weight: 600; line-height: 1.28; margin: 0; color: #181C23; text-wrap: balance">Para quem quer aprofundar a técnica</h3>
+          <p style="font-size: 0.9375rem; line-height: 1.68; color: #4A5058; margin: 0">Peritos e estudiosos que já têm base e buscam repertório mais amplo, metodologia avançada e maior consistência na produção de laudos e análises.</p>
+        </div>
+        <span aria-hidden="true" style="background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); color: #F0CE8E; flex: 0 0 auto; width: 58px; height: 58px; border-radius: 12px; display: flex; align-items: center; justify-content: center">
+          <i data-lucide="microscope" stroke-width="1.8" style="width: 24px; height: 24px"></i>
+        </span>
+      </li>
+      <li data-gxlume="1" style="background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 14px; padding: clamp(24px, 3vw, 38px); display: flex; align-items: center; gap: clamp(18px, 2.6vw, 34px); flex-wrap: wrap">
+        <span aria-hidden="true" style="font-family: var(--gx-num); font-size: clamp(2.6rem, 5vw, 4.2rem); font-weight: 700; line-height: 0.9; letter-spacing: -0.03em; color: rgba(241,241,241,0.16); flex: 0 0 auto">03</span>
+        <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <span style="background: rgba(241,241,241,0.10); border: 1px solid rgba(207,154,68,0.45); color: #CF9A44; align-self: flex-start; border-radius: 999px; padding: 7px 14px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.2">Evolução profissional</span>
+          <h3 style="font-family: var(--gx-display); font-size: clamp(1.125rem, 1.9vw, 1.375rem); font-weight: 600; line-height: 1.28; margin: 0; color: #F1F1F1; text-wrap: balance">Para quem já atua e quer evoluir</h3>
+          <p style="font-size: 0.9375rem; line-height: 1.68; color: rgba(241,241,241,0.82); margin: 0">Profissionais em exercício que desejam atualização técnica, aprimoramento de metodologia e um posicionamento mais sólido e estratégico no mercado pericial.</p>
+        </div>
+        <span aria-hidden="true" style="background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); color: #16294A; flex: 0 0 auto; width: 58px; height: 58px; border-radius: 12px; display: flex; align-items: center; justify-content: center">
+          <i data-lucide="trending-up" stroke-width="1.8" style="width: 24px; height: 24px"></i>
+        </span>
+      </li>
+      <li data-gxlume="1" style="background: rgba(255,255,255,0.68); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(24px, 3vw, 38px); display: flex; align-items: center; gap: clamp(18px, 2.6vw, 34px); flex-wrap: wrap">
+        <span aria-hidden="true" style="font-family: var(--gx-num); font-size: clamp(2.6rem, 5vw, 4.2rem); font-weight: 700; line-height: 0.9; letter-spacing: -0.03em; color: rgba(24,28,35,0.10); flex: 0 0 auto">04</span>
+        <div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+          <span style="background: rgba(207,154,68,0.14); border: 1px solid rgba(207,154,68,0.45); color: #8A6224; align-self: flex-start; border-radius: 999px; padding: 7px 14px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.2">Nova área de atuação</span>
+          <h3 style="font-family: var(--gx-display); font-size: clamp(1.125rem, 1.9vw, 1.375rem); font-weight: 600; line-height: 1.28; margin: 0; color: #181C23; text-wrap: balance">Para quem busca uma nova área de atuação</h3>
+          <p style="font-size: 0.9375rem; line-height: 1.68; color: #4A5058; margin: 0">Profissionais de áreas correlatas que enxergam na perícia uma oportunidade concreta de reposicionamento, geração de renda e desenvolvimento de carreira especializada.</p>
+        </div>
+        <span aria-hidden="true" style="background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); color: #F0CE8E; flex: 0 0 auto; width: 58px; height: 58px; border-radius: 12px; display: flex; align-items: center; justify-content: center">
+          <i data-lucide="route" stroke-width="1.8" style="width: 24px; height: 24px"></i>
+        </span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="cursos" aria-label="Cursos especializados" style="background: #F1F1F1; padding: clamp(72px, 9vw, 128px) 0">
+  <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem)">
+    <p style="display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #181C23; margin: 0 0 22px"><span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44"></span>Formações</p>
+    <h2 style="font-family: var(--gx-display); font-weight: 600; font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.14; letter-spacing: -0.018em; margin: 0 0 24px; max-width: 22ch; color: #181C23; text-wrap: balance">Nossos cursos especializados</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(20px, 2.4vw, 28px); margin-top: clamp(40px, 5vw, 56px)">
+      <article data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 18px">
+        <h3 style="font-family: var(--gx-display); font-size: 1.25rem; font-weight: 600; line-height: 1.26; margin: 0; color: #181C23; text-wrap: balance">Doc Digital na Prática</h3>
+        <span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44; display: block"></span>
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: #4A5058; margin: 0; flex: 1 1 auto">Para quem deseja atuar em uma das áreas que mais cresce na perícia judicial. Aprenda a analisar documentos digitais, assinaturas eletrônicas e digitais, certificados, metadados, imagens, vídeos e outros elementos essenciais para identificar possíveis fraudes e produzir laudos técnicos com segurança.</p>
+        <a href="https://peritocertificado.com/docdigital/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; align-self: flex-start; transition: transform 180ms ease, box-shadow 180ms ease" data-gxh="10">Acessar detalhes</a>
+      </article>
+      <article data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 18px">
+        <h3 style="font-family: var(--gx-display); font-size: 1.25rem; font-weight: 600; line-height: 1.26; margin: 0; color: #181C23; text-wrap: balance">Grafo Expert</h3>
+        <span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44; display: block"></span>
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: #4A5058; margin: 0; flex: 1 1 auto">Para quem deseja entender, de forma mais estratégica, como funciona a perícia judicial e como transformar a própria formação em uma possibilidade real de atuação e renda. O curso apresenta a lógica da perícia, o papel do perito, a estrutura do laudo e a atuação também em perícias particulares e assistência técnica.</p>
+        <a href="https://peritocertificado.com/grafoexpert/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; align-self: flex-start; transition: transform 180ms ease, box-shadow 180ms ease" data-gxh="11">Acessar detalhes</a>
+      </article>
+      <article data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 18px">
+        <h3 style="font-family: var(--gx-display); font-size: 1.25rem; font-weight: 600; line-height: 1.26; margin: 0; color: #181C23; text-wrap: balance">Doc Expert</h3>
+        <span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44; display: block"></span>
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: #4A5058; margin: 0; flex: 1 1 auto">Curso voltado para quem deseja atuar com uma visão mais completa sobre documentos, indo além da análise isolada da assinatura. A formação aprofunda temas como autenticidade documental, rasuras, montagens, manipulações, documentos digitalizados, PDFs e estruturação de laudos robustos.</p>
+        <a href="https://peritocertificado.com/docexpert/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; align-self: flex-start; transition: transform 180ms ease, box-shadow 180ms ease" data-gxh="12">Acessar detalhes</a>
+      </article>
+      <article data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 18px">
+        <h3 style="font-family: var(--gx-display); font-size: 1.25rem; font-weight: 600; line-height: 1.26; margin: 0; color: #181C23; text-wrap: balance">Método Grafodoc</h3>
+        <span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44; display: block"></span>
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: #4A5058; margin: 0; flex: 1 1 auto">A formação integrada para quem deseja reunir, em um único método, Perícia Judicial, Grafoscopia e Documentoscopia. Ideal para quem busca uma preparação mais ampla, conectando técnica, prática e posicionamento profissional em uma estrutura de formação mais completa.</p>
+        <a href="https://peritocertificado.com/metodografodoc/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; align-self: flex-start; transition: transform 180ms ease, box-shadow 180ms ease" data-gxh="13">Conhecer o curso</a>
+      </article>
+      <article data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 18px">
+        <h3 style="font-family: var(--gx-display); font-size: 1.25rem; font-weight: 600; line-height: 1.26; margin: 0; color: #181C23; text-wrap: balance">Grafodoc na Prática</h3>
+        <span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44; display: block"></span>
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: #4A5058; margin: 0; flex: 1 1 auto">Uma formação voltada para quem já estudou a teoria e deseja avançar para a aplicação prática em casos reais. O curso trabalha com situações concretas, raciocínio pericial estruturado e tomada de decisão técnica, fortalecendo a maturidade profissional diante de casos mais complexos.</p>
+        <a href="https://peritocertificado.com/grafodocnapratica/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; align-self: flex-start; transition: transform 180ms ease, box-shadow 180ms ease" data-gxh="14">Acessar detalhes</a>
+      </article>
+      <article data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 18px">
+        <h3 style="font-family: var(--gx-display); font-size: 1.25rem; font-weight: 600; line-height: 1.26; margin: 0; color: #181C23; text-wrap: balance">Expert em Cédulas</h3>
+        <span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44; display: block"></span>
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: #4A5058; margin: 0; flex: 1 1 auto">Uma formação prática para quem deseja aprender a identificar cédulas falsas, reduzir prejuízos e aumentar a segurança no recebimento de numerário. O curso ensina, de forma objetiva, técnicas de conferência, principais erros dos falsificadores e formas de blindar o comércio contra perdas.</p>
+        <a href="https://peritocertificado.com/expertemcedulas/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; align-self: flex-start; transition: transform 180ms ease, box-shadow 180ms ease" data-gxh="15">Acessar detalhes</a>
+      </article>
+      <article data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 18px">
+        <h3 style="font-family: var(--gx-display); font-size: 1.25rem; font-weight: 600; line-height: 1.26; margin: 0; color: #181C23; text-wrap: balance">Expert em Assistência Técnica</h3>
+        <span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44; display: block"></span>
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: #4A5058; margin: 0; flex: 1 1 auto">Curso voltado para quem deseja atuar como Assistente Técnico Judicial, prestando serviços para escritórios de advocacia, empresas, bancos, autores, réus e demais partes do processo. Aprenda desde a captação de clientes até a elaboração de quesitos, contratos, manifestações técnicas e toda a atuação prática na assistência judicial.</p>
+        <a href="https://peritocertificado.com/assistenciatecnica/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; align-self: flex-start; transition: transform 180ms ease, box-shadow 180ms ease" data-gxh="16">Acessar detalhes</a>
+      </article>
+      <article data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 18px">
+        <h3 style="font-family: var(--gx-display); font-size: 1.25rem; font-weight: 600; line-height: 1.26; margin: 0; color: #181C23; text-wrap: balance">Manual Prático da Análise Grafotécnica</h3>
+        <span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44; display: block"></span>
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: #4A5058; margin: 0; flex: 1 1 auto">Livro desenvolvido para profissionais que desejam aprender ou aperfeiçoar a Análise Grafotécnica de forma prática e objetiva. Aborda conceitos fundamentais, procedimentos periciais, elaboração de conclusões e um estudo de caso real. Uma referência indispensável para fortalecer a atuação técnica do perito.</p>
+        <a href="https://peritocertificado.com/manualpraticografo/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; align-self: flex-start; transition: transform 180ms ease, box-shadow 180ms ease" data-gxh="17">Acessar detalhes</a>
+      </article>
+      <article data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 18px">
+        <h3 style="font-family: var(--gx-display); font-size: 1.25rem; font-weight: 600; line-height: 1.26; margin: 0; color: #181C23; text-wrap: balance">Manual da Perícia em Documentos Digitais</h3>
+        <span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44; display: block"></span>
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: #4A5058; margin: 0; flex: 1 1 auto">Livro desenvolvido para profissionais que desejam dominar a perícia em documentos digitais, da fundamentação técnica à aplicação prática. Aborda legislação, metadados, biometria, documentos híbridos, investigação digital e o método CROSS-DOC. Uma referência para produzir análises mais seguras, completas e tecnicamente fundamentadas.</p>
+        <a href="https://peritocertificado.com/manualdocdigital/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; align-self: flex-start; transition: transform 180ms ease, box-shadow 180ms ease" data-gxh="18">Acessar detalhes</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="fundadora" aria-label="Quem conduz as formações" style="background: #E3E5E8; padding: clamp(72px, 9vw, 128px) 0">
+  <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(36px, 5vw, 64px); align-items: start">
+    <img data-gxzoom="1" src="https://peritocertificado.com/wp-content/uploads/2026/09/jacqueline-sobre.png" alt="Jacqueline Tirotti, perita judicial e fundadora do Perito Certificado" loading="lazy" style="width: 100%; height: auto; border-radius: 14px; border: 1px solid rgba(24,28,35,0.12); box-shadow: 0 18px 44px rgba(24,28,35,0.14)">
+    <div>
+      <p style="display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #181C23; margin: 0 0 22px"><span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44"></span>Quem conduz</p>
+      <h2 style="font-family: var(--gx-display); font-weight: 600; font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.14; letter-spacing: -0.018em; margin: 0 0 24px; color: #181C23">Jacqueline Tirotti</h2>
+      <p style="font-size: 1.0625rem; line-height: 1.72; color: #4A5058; margin: 0 0 20px">Jacqueline Mila Tirotti é graduada em Direito e pós-graduada em Perícia Criminal &amp; Ciências Forenses. Atua como Perita Judicial em grafoscopia desde 2013 e foi a perita mais nomeada do Tribunal de Justiça do Distrito Federal (TJDFT) entre 2017 e 2024 na área.</p>
+      <p style="font-size: 1.0625rem; line-height: 1.72; color: #4A5058; margin: 0 0 20px">Ministra aulas e palestras sobre Perícia Judicial, Documentoscopia e Grafoscopia, com trabalhos apresentados em congressos e seminários nacionais e internacionais. É professora de documentoscopia e grafoscopia na pós-graduação em perícia criminal e investigação forense da ESP desde 2018, e de grafoscopia na pós-graduação em perícia criminal e ciências forenses do IPOG desde 2020.</p>
+      <p style="font-size: 1.0625rem; line-height: 1.72; color: #4A5058; margin: 0 0 clamp(28px, 3.5vw, 40px)">Escreveu o livro "A análise grafotécnica para iniciantes" (2015) e assina o capítulo 14 — Análise de Documentos — da obra Perícia Criminal Contemporânea: Fundamentos, Teoria, Prática e Inovação na Ciência Criminalística (2025), da Editora Juspodivm.</p>
+      <ul style="list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(24,28,35,0.14)">
+        <li data-gxcred="1" style="display: flex; align-items: baseline; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(24,28,35,0.14)">
+          <i data-lucide="check" stroke-width="2.2" style="width: 16px; height: 16px; color: #CF9A44; flex-shrink: 0"></i>
+          <span style="font-size: 1rem; line-height: 1.5; color: #3E434B">Perita Judicial em grafoscopia desde 2013</span>
+        </li>
+        <li data-gxcred="1" style="display: flex; align-items: baseline; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(24,28,35,0.14)">
+          <i data-lucide="check" stroke-width="2.2" style="width: 16px; height: 16px; color: #CF9A44; flex-shrink: 0"></i>
+          <span style="font-size: 1rem; line-height: 1.5; color: #3E434B">Perita mais nomeada do TJDFT entre 2017 e 2024</span>
+        </li>
+        <li data-gxcred="1" style="display: flex; align-items: baseline; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(24,28,35,0.14)">
+          <i data-lucide="check" stroke-width="2.2" style="width: 16px; height: 16px; color: #CF9A44; flex-shrink: 0"></i>
+          <span style="font-size: 1rem; line-height: 1.5; color: #3E434B">Pós-graduada em Perícia Criminal &amp; Ciências Forenses</span>
+        </li>
+        <li data-gxcred="1" style="display: flex; align-items: baseline; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(24,28,35,0.14)">
+          <i data-lucide="check" stroke-width="2.2" style="width: 16px; height: 16px; color: #CF9A44; flex-shrink: 0"></i>
+          <span style="font-size: 1rem; line-height: 1.5; color: #3E434B">Professora de pós-graduação na ESP e no IPOG</span>
+        </li>
+        <li data-gxcred="1" style="display: flex; align-items: baseline; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(24,28,35,0.14)">
+          <i data-lucide="check" stroke-width="2.2" style="width: 16px; height: 16px; color: #CF9A44; flex-shrink: 0"></i>
+          <span style="font-size: 1rem; line-height: 1.5; color: #3E434B">Autora de livro e de capítulo em obra da Juspodivm</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="numeros" aria-label="Números" style="background: #F1F1F1; padding: clamp(72px, 9vw, 128px) 0">
+  <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem)">
+    <p style="display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #181C23; margin: 0 0 22px"><span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44"></span>Trajetória</p>
+    <h2 style="font-family: var(--gx-display); font-weight: 600; font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.14; letter-spacing: -0.018em; margin: 0 0 24px; max-width: 18ch; color: #181C23; text-wrap: balance">Números que falam</h2>
+    <p style="font-size: 1.125rem; line-height: 1.7; color: #4A5058; margin: 0 0 clamp(36px, 4.5vw, 52px); max-width: 60ch">Uma trajetória construída com experiência prática, formação técnica e impacto real na área pericial.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: clamp(18px, 2.2vw, 26px)">
+      <div data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 12px">
+        <span data-gxconta="+13" style="font-family: var(--gx-num); font-size: clamp(2.1rem, 3.4vw, 2.9rem); font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: #8A6224">+13</span>
+        <span style="font-size: 0.9375rem; line-height: 1.6; color: #4A5058">anos de atuação em perícias judiciais.</span>
+      </div>
+      <div data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 12px">
+        <span data-gxconta="+2.000" style="font-family: var(--gx-num); font-size: clamp(2.1rem, 3.4vw, 2.9rem); font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: #8A6224">+2.000</span>
+        <span style="font-size: 0.9375rem; line-height: 1.6; color: #4A5058">alunos formados e mentorados.</span>
+      </div>
+      <div data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 12px">
+        <span data-gxconta="+1.000" style="font-family: var(--gx-num); font-size: clamp(2.1rem, 3.4vw, 2.9rem); font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: #8A6224">+1.000</span>
+        <span style="font-size: 0.9375rem; line-height: 1.6; color: #4A5058">casos periciais realizados.</span>
+      </div>
+      <div data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 12px">
+        <span data-gxconta="+400" style="font-family: var(--gx-num); font-size: clamp(2.1rem, 3.4vw, 2.9rem); font-weight: 600; line-height: 1; letter-spacing: -0.02em; color: #8A6224">+400</span>
+        <span style="font-size: 0.9375rem; line-height: 1.6; color: #4A5058">horas de conteúdo técnico.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="depoimentos" aria-label="Depoimentos de alunos" style="background: #E9EAEC; padding: clamp(72px, 9vw, 128px) 0; overflow: hidden">
+  <div style="width: 100%">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem)">
+      <p style="display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #181C23; margin: 0 0 22px"><span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44"></span>Resultados</p>
+      <h2 style="font-family: var(--gx-display); font-weight: 600; font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.14; letter-spacing: -0.018em; margin: 0 0 clamp(40px, 5vw, 56px); max-width: 20ch; color: #181C23; text-wrap: balance">O que nossos alunos dizem</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: clamp(20px, 2.5vw, 28px); overflow: hidden">
+      <div data-gxtrack="a" style="display: flex; width: max-content; gap: clamp(20px, 2.5vw, 28px); will-change: transform">
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p aria-label="Avaliação cinco de cinco" style="display: flex; gap: 3px; font-size: 0.9375rem; line-height: 1; color: #CF9A44; margin: 0">★★★★★</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Felipe Vitali<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Avaliação do curso</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Excelente curso, situações na prática aonde mostram detalhadamente vários tipos de situações que acontecem no dia a dia da perícia. Aproveitei muito com os diversos exemplos que a Jacque passou.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Elimar Russi Filho<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Menos de 1 hora após me inscrever nos tribunais tive a sorte de ser nomeado.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p aria-label="Avaliação cinco de cinco" style="display: flex; gap: 3px; font-size: 0.9375rem; line-height: 1; color: #CF9A44; margin: 0">★★★★★</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Stephanie Venith<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Avaliação do curso</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Maravilhoso e esclarecedor.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Luciane Schneiders<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Boa tarde… com alegria compartilho com vocês minha primeira nomeação e, se possível, solicito um suporte de alguém mais experiente.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p aria-label="Avaliação cinco de cinco" style="display: flex; gap: 3px; font-size: 0.9375rem; line-height: 1; color: #CF9A44; margin: 0">★★★★★</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Gevanice Maria Duarte Varela Barreto<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Avaliação do curso</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Foi muito enriquecedor.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Kleber Bueno<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Boa noite pessoal. Tive minha primeira nomeação, graças a Deus!</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Gizeli<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Saiu minha primeira nomeação…</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p aria-label="Avaliação cinco de cinco" style="display: flex; gap: 3px; font-size: 0.9375rem; line-height: 1; color: #CF9A44; margin: 0">★★★★★</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Felipe Vitali<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Avaliação do curso</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Excelente curso, situações na prática aonde mostram detalhadamente vários tipos de situações que acontecem no dia a dia da perícia. Aproveitei muito com os diversos exemplos que a Jacque passou.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Elimar Russi Filho<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Menos de 1 hora após me inscrever nos tribunais tive a sorte de ser nomeado.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p aria-label="Avaliação cinco de cinco" style="display: flex; gap: 3px; font-size: 0.9375rem; line-height: 1; color: #CF9A44; margin: 0">★★★★★</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Stephanie Venith<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Avaliação do curso</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Maravilhoso e esclarecedor.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Luciane Schneiders<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Boa tarde… com alegria compartilho com vocês minha primeira nomeação e, se possível, solicito um suporte de alguém mais experiente.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p aria-label="Avaliação cinco de cinco" style="display: flex; gap: 3px; font-size: 0.9375rem; line-height: 1; color: #CF9A44; margin: 0">★★★★★</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Gevanice Maria Duarte Varela Barreto<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Avaliação do curso</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Foi muito enriquecedor.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Kleber Bueno<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Boa noite pessoal. Tive minha primeira nomeação, graças a Deus!</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Gizeli<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Saiu minha primeira nomeação…</blockquote>
+          </figure>
+      </div>
+      <div data-gxtrack="b" style="display: flex; width: max-content; gap: clamp(20px, 2.5vw, 28px); will-change: transform">
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Lucas Vaz Lopes<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Bom dia, fui nomeado para 2 perícias digitais (voltado para assinatura eletrônica/digital).</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Gabriela Rodrigues<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Pessoal, boa noite, recebi minha primeira nomeação, e é justiça gratuita.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Daniel Ribeiro<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Prezados, boa tarde, recebi minha primeira nomeação de grafo.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Erica<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Boa tarde! Tive uma nomeação hoje que preciso responder.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Gizeli<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Boa tarde, colegas, recebi minha primeira nomeação fora da AJG, o juiz pediu para informar meus honorários.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Barbara Della<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Boa tarde, pessoal, tudo bem? Chegou uma nomeação no Projudi no mês de março.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Adriana<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Bom dia a todos! Recebi uma nomeação.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Lucas Vaz Lopes<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Bom dia, fui nomeado para 2 perícias digitais (voltado para assinatura eletrônica/digital).</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Gabriela Rodrigues<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Pessoal, boa noite, recebi minha primeira nomeação, e é justiça gratuita.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Daniel Ribeiro<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Prezados, boa tarde, recebi minha primeira nomeação de grafo.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Erica<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Boa tarde! Tive uma nomeação hoje que preciso responder.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Gizeli<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Boa tarde, colegas, recebi minha primeira nomeação fora da AJG, o juiz pediu para informar meus honorários.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Barbara Della<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Boa tarde, pessoal, tudo bem? Chegou uma nomeação no Projudi no mês de março.</blockquote>
+          </figure>
+          <figure style="margin: 0; width: 340px; flex-shrink: 0; background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 12px; box-shadow: 0 14px 34px rgba(24,28,35,0.16); padding: 28px 26px; display: flex; flex-direction: column; gap: 14px">
+            <p style="font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; color: #CF9A44; margin: 0">Nomeação</p>
+            <figcaption style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; line-height: 1.3; color: #F1F1F1">Adriana<span style="display: block; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: rgba(241,241,241,0.5); margin-top: 5px">Relato no grupo de alunos</span></figcaption>
+            <blockquote style="margin: 0; font-size: 1rem; font-style: italic; line-height: 1.62; color: rgba(241,241,241,0.78); text-wrap: pretty">Bom dia a todos! Recebi uma nomeação.</blockquote>
+          </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="duvidas" aria-label="Dúvidas frequentes" style="background: #F1F1F1; padding: clamp(72px, 9vw, 128px) 0">
+  <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(36px, 5vw, 64px); align-items: start">
+    <div style="position: sticky; top: 104px">
+      <p style="display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #181C23; margin: 0 0 22px"><span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44"></span>Dúvidas frequentes</p>
+      <h2 style="font-family: var(--gx-display); font-weight: 600; font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.14; letter-spacing: -0.018em; margin: 0 0 24px; max-width: 18ch; color: #181C23; text-wrap: balance">Perguntas que chegam com mais frequência</h2>
+      <div data-gxlume="1" style="background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 14px; padding: clamp(28px, 3.5vw, 40px); display: flex; flex-direction: column; gap: 22px; margin-top: clamp(28px, 3.5vw, 40px)">
+        <p style="display: flex; align-items: center; gap: 10px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #CF9A44; margin: 0"><svg viewBox="0 0 24 24" fill="currentColor" style="width: 17px; height: 17px; flex-shrink: 0" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.16a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.39c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.24-8.23 8.24z"/></svg>Fale com a equipe</p>
+        <h3 style="font-family: var(--gx-display); font-size: clamp(1.3rem, 2.2vw, 1.75rem); font-weight: 600; line-height: 1.24; margin: 0; color: #F1F1F1; text-wrap: balance">Ficou com alguma dúvida específica?</h3>
+        <p style="font-size: 1rem; line-height: 1.68; color: rgba(241,241,241,0.82); margin: 0">Você pode entrar em contato diretamente pelo WhatsApp:</p>
+        <span aria-hidden="true" style="display: block; height: 1px; background: rgba(241,241,241,0.22)"></span>
+        <ul style="list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0; padding: 0">
+          <li data-gxselo="1" style="display: flex; align-items: center; justify-content: center; min-height: 52px; border: 1px solid rgba(241,241,241,0.45); border-radius: 999px; padding: 10px 8px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #F1F1F1; line-height: 1.3; text-align: center">Resposta rápida</li>
+          <li data-gxselo="1" style="display: flex; align-items: center; justify-content: center; min-height: 52px; border: 1px solid rgba(241,241,241,0.45); border-radius: 999px; padding: 10px 8px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #F1F1F1; line-height: 1.3; text-align: center">Atendimento humano</li>
+          <li data-gxselo="1" style="display: flex; align-items: center; justify-content: center; min-height: 52px; border: 1px solid rgba(241,241,241,0.45); border-radius: 999px; padding: 10px 8px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #F1F1F1; line-height: 1.3; text-align: center">Sem compromisso</li>
+        </ul>
+        <a href="https://wa.me/5561984133386?text=Oi%2C%20vim%20do%20site%20e%20quero%20saber%20mais%20sobre%20as%20forma%C3%A7%C3%B5es%20do%20Perito%20Certificado" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 16px 28px; border-radius: 999px; font-size: 1rem; font-weight: 600; transition: transform 180ms ease, box-shadow 180ms ease"><svg viewBox="0 0 24 24" fill="currentColor" style="width: 18px; height: 18px; flex-shrink: 0" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z"/><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.16a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.39c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.24-8.23 8.24z"/></svg>Tenho uma dúvida</a>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 14px">
+      <div data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; overflow: hidden">
+        <button type="button" data-gxi="0" aria-expanded="false" aria-controls="pc-faq-0" style="width: 100%; display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; background: transparent; border: 0; text-align: left; padding: clamp(18px, 2.2vw, 24px) clamp(20px, 2.4vw, 28px); cursor: pointer">
+          <span style="font-family: var(--gx-display); font-size: 1.0625rem; font-weight: 600; line-height: 1.34; color: #181C23">1. Preciso ter experiência para começar?</span>
+          <span aria-hidden="true" style="font-family: var(--gx-num); font-size: 1.25rem; line-height: 1.2; color: #CF9A44">+</span>
+        </button>
+        <div id="pc-faq-0" data-faqpanel="0" style="display: none; padding: 0 clamp(20px, 2.4vw, 28px) clamp(22px, 2.6vw, 28px)">
+          <p style="font-size: 0.9375rem; line-height: 1.7; color: #4A5058; margin: 0">Não. Existem cursos pensados tanto para quem está começando quanto para quem já possui experiência e deseja aprofundar a formação.</p>
+        </div>
+      </div>
+      <div data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; overflow: hidden">
+        <button type="button" data-gxi="1" aria-expanded="false" aria-controls="pc-faq-1" style="width: 100%; display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; background: transparent; border: 0; text-align: left; padding: clamp(18px, 2.2vw, 24px) clamp(20px, 2.4vw, 28px); cursor: pointer">
+          <span style="font-family: var(--gx-display); font-size: 1.0625rem; font-weight: 600; line-height: 1.34; color: #181C23">2. Preciso ser formado em Direito?</span>
+          <span aria-hidden="true" style="font-family: var(--gx-num); font-size: 1.25rem; line-height: 1.2; color: #CF9A44">+</span>
+        </button>
+        <div id="pc-faq-1" data-faqpanel="1" style="display: none; padding: 0 clamp(20px, 2.4vw, 28px) clamp(22px, 2.6vw, 28px)">
+          <p style="font-size: 0.9375rem; line-height: 1.7; color: #4A5058; margin: 0">Não necessariamente. Os cursos atendem diferentes perfis profissionais que desejam estudar e atuar na área pericial.</p>
+        </div>
+      </div>
+      <div data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; overflow: hidden">
+        <button type="button" data-gxi="2" aria-expanded="false" aria-controls="pc-faq-2" style="width: 100%; display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; background: transparent; border: 0; text-align: left; padding: clamp(18px, 2.2vw, 24px) clamp(20px, 2.4vw, 28px); cursor: pointer">
+          <span style="font-family: var(--gx-display); font-size: 1.0625rem; font-weight: 600; line-height: 1.34; color: #181C23">3. Os cursos servem para quem já atua na área?</span>
+          <span aria-hidden="true" style="font-family: var(--gx-num); font-size: 1.25rem; line-height: 1.2; color: #CF9A44">+</span>
+        </button>
+        <div id="pc-faq-2" data-faqpanel="2" style="display: none; padding: 0 clamp(20px, 2.4vw, 28px) clamp(22px, 2.6vw, 28px)">
+          <p style="font-size: 0.9375rem; line-height: 1.7; color: #4A5058; margin: 0">Sim. Há formações voltadas tanto para iniciantes quanto para profissionais que desejam atualização, aprofundamento técnico e prática aplicada.</p>
+        </div>
+      </div>
+      <div data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; overflow: hidden">
+        <button type="button" data-gxi="3" aria-expanded="false" aria-controls="pc-faq-3" style="width: 100%; display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; background: transparent; border: 0; text-align: left; padding: clamp(18px, 2.2vw, 24px) clamp(20px, 2.4vw, 28px); cursor: pointer">
+          <span style="font-family: var(--gx-display); font-size: 1.0625rem; font-weight: 600; line-height: 1.34; color: #181C23">4. Vou aprender só teoria?</span>
+          <span aria-hidden="true" style="font-family: var(--gx-num); font-size: 1.25rem; line-height: 1.2; color: #CF9A44">+</span>
+        </button>
+        <div id="pc-faq-3" data-faqpanel="3" style="display: none; padding: 0 clamp(20px, 2.4vw, 28px) clamp(22px, 2.6vw, 28px)">
+          <p style="font-size: 0.9375rem; line-height: 1.7; color: #4A5058; margin: 0">Não. A proposta do Perito Certificado é unir base técnica, visão prática e desenvolvimento profissional.</p>
+        </div>
+      </div>
+      <div data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; overflow: hidden">
+        <button type="button" data-gxi="4" aria-expanded="false" aria-controls="pc-faq-4" style="width: 100%; display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; background: transparent; border: 0; text-align: left; padding: clamp(18px, 2.2vw, 24px) clamp(20px, 2.4vw, 28px); cursor: pointer">
+          <span style="font-family: var(--gx-display); font-size: 1.0625rem; font-weight: 600; line-height: 1.34; color: #181C23">5. Qual curso é ideal para mim?</span>
+          <span aria-hidden="true" style="font-family: var(--gx-num); font-size: 1.25rem; line-height: 1.2; color: #CF9A44">+</span>
+        </button>
+        <div id="pc-faq-4" data-faqpanel="4" style="display: none; padding: 0 clamp(20px, 2.4vw, 28px) clamp(22px, 2.6vw, 28px)">
+          <p style="font-size: 0.9375rem; line-height: 1.7; color: #4A5058; margin: 0">Isso depende do seu momento atual. Há cursos para quem quer começar, para quem deseja aprofundar a técnica e para quem busca prática aplicada.</p>
+        </div>
+      </div>
+      <div data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; overflow: hidden">
+        <button type="button" data-gxi="5" aria-expanded="false" aria-controls="pc-faq-5" style="width: 100%; display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; background: transparent; border: 0; text-align: left; padding: clamp(18px, 2.2vw, 24px) clamp(20px, 2.4vw, 28px); cursor: pointer">
+          <span style="font-family: var(--gx-display); font-size: 1.0625rem; font-weight: 600; line-height: 1.34; color: #181C23">6. Os cursos ajudam na prática profissional?</span>
+          <span aria-hidden="true" style="font-family: var(--gx-num); font-size: 1.25rem; line-height: 1.2; color: #CF9A44">+</span>
+        </button>
+        <div id="pc-faq-5" data-faqpanel="5" style="display: none; padding: 0 clamp(20px, 2.4vw, 28px) clamp(22px, 2.6vw, 28px)">
+          <p style="font-size: 0.9375rem; line-height: 1.7; color: #4A5058; margin: 0">Sim. As formações foram pensadas para aproximar o aluno da realidade da perícia e das possibilidades de atuação na área.</p>
+        </div>
+      </div>
+      <div data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; overflow: hidden">
+        <button type="button" data-gxi="6" aria-expanded="false" aria-controls="pc-faq-6" style="width: 100%; display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; background: transparent; border: 0; text-align: left; padding: clamp(18px, 2.2vw, 24px) clamp(20px, 2.4vw, 28px); cursor: pointer">
+          <span style="font-family: var(--gx-display); font-size: 1.0625rem; font-weight: 600; line-height: 1.34; color: #181C23">7. É reconhecido pelo MEC?</span>
+          <span aria-hidden="true" style="font-family: var(--gx-num); font-size: 1.25rem; line-height: 1.2; color: #CF9A44">+</span>
+        </button>
+        <div id="pc-faq-6" data-faqpanel="6" style="display: none; padding: 0 clamp(20px, 2.4vw, 28px) clamp(22px, 2.6vw, 28px)">
+          <p style="font-size: 0.9375rem; line-height: 1.7; color: #4A5058; margin: 0">Pela regulamentação do MEC, o nosso curso é reconhecido como curso livre, sendo destinado à capacitação, atualização e desenvolvimento profissional. Cursos livres não dependem de reconhecimento individual do MEC para serem ofertados.</p>
+        </div>
+      </div>
+      <div data-gxlume="1" style="background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); border: 1px solid rgba(24,28,35,0.16); border-radius: 14px; overflow: hidden">
+        <button type="button" data-gxi="7" aria-expanded="false" aria-controls="pc-faq-7" style="width: 100%; display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; background: transparent; border: 0; text-align: left; padding: clamp(18px, 2.2vw, 24px) clamp(20px, 2.4vw, 28px); cursor: pointer">
+          <span style="font-family: var(--gx-display); font-size: 1.0625rem; font-weight: 600; line-height: 1.34; color: #181C23">8. Posso estudar mesmo sem já atuar na área?</span>
+          <span aria-hidden="true" style="font-family: var(--gx-num); font-size: 1.25rem; line-height: 1.2; color: #CF9A44">+</span>
+        </button>
+        <div id="pc-faq-7" data-faqpanel="7" style="display: none; padding: 0 clamp(20px, 2.4vw, 28px) clamp(22px, 2.6vw, 28px)">
+          <p style="font-size: 0.9375rem; line-height: 1.7; color: #4A5058; margin: 0">Sim. Muitas pessoas começam justamente para construir base, desenvolver conhecimento e se preparar para futuras oportunidades profissionais.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="redes" aria-label="Redes sociais" style="background: #E3E5E8; padding: clamp(72px, 9vw, 128px) 0">
+  <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem)">
+    <p style="display: flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #181C23; margin: 0 0 22px"><span aria-hidden="true" style="width: 42px; height: 1px; background: #CF9A44"></span>Acompanhe</p>
+    <h2 style="font-family: var(--gx-display); font-weight: 600; font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.14; letter-spacing: -0.018em; margin: 0 0 24px; max-width: 20ch; color: #181C23; text-wrap: balance">Siga-nos nas redes sociais</h2>
+    <p style="font-size: 1.125rem; line-height: 1.7; color: #4A5058; margin: 0 0 clamp(36px, 4.5vw, 52px); max-width: 60ch">Acompanhe conteúdos, análises, bastidores e atualizações sobre o universo da perícia.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: clamp(18px, 2.2vw, 26px)">
+      <article data-gxlume="1" style="background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 16px">
+        <span aria-hidden="true" style="color: #CF9A44; display: flex"><svg viewBox="0 0 24 24" fill="currentColor" style="width: 26px; height: 26px" aria-hidden="true"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.07.05 1.79.22 2.43.47.66.25 1.22.6 1.77 1.15.55.55.9 1.11 1.15 1.77.25.64.42 1.36.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.07-.22 1.79-.47 2.43-.25.66-.6 1.22-1.15 1.77-.55.55-1.11.9-1.77 1.15-.64.25-1.36.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.07-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.36-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.07.22-1.79.47-2.43.25-.66.6-1.22 1.15-1.77.55-.55 1.11-.9 1.77-1.15.64-.25 1.36-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.25a3.25 3.25 0 1 1 0-6.5 3.25 3.25 0 0 1 0 6.5zM18.4 6.75a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0z"/></svg></span>
+        <h3 style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; margin: 0; color: #F1F1F1">Instagram</h3>
+        <p style="font-size: 0.9375rem; line-height: 1.64; color: rgba(241,241,241,0.82); margin: 0; flex: 1 1 auto">Conteúdos, bastidores e atualizações sobre a área pericial.</p>
+        <a href="https://instagram.com/peritatirotti" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; align-self: flex-start; transition: transform 180ms ease, box-shadow 180ms ease">Acessar perfil</a>
+      </article>
+      <article data-gxlume="1" style="background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 16px">
+        <span aria-hidden="true" style="color: #CF9A44; display: flex"><svg viewBox="0 0 24 24" fill="currentColor" style="width: 26px; height: 26px" aria-hidden="true"><path d="M21.58 7.19a2.51 2.51 0 0 0-1.77-1.78C18.25 5 12 5 12 5s-6.25 0-7.81.41A2.51 2.51 0 0 0 2.42 7.2 26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .42 4.81 2.51 2.51 0 0 0 1.77 1.78C5.75 19 12 19 12 19s6.25 0 7.81-.41a2.51 2.51 0 0 0 1.77-1.78A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.42-4.81zM10 15.02V8.98L15.2 12 10 15.02z"/></svg></span>
+        <h3 style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; margin: 0; color: #F1F1F1">YouTube</h3>
+        <p style="font-size: 0.9375rem; line-height: 1.64; color: rgba(241,241,241,0.82); margin: 0; flex: 1 1 auto">Aulas, análises e aprofundamentos técnicos em vídeo.</p>
+        <a href="https://www.youtube.com/@peritatirotti" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; align-self: flex-start; transition: transform 180ms ease, box-shadow 180ms ease">Acessar perfil</a>
+      </article>
+      <article data-gxlume="1" style="background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 16px">
+        <span aria-hidden="true" style="color: #CF9A44; display: flex"><svg viewBox="0 0 24 24" fill="currentColor" style="width: 26px; height: 26px" aria-hidden="true"><path d="M20.45 3H3.55A.55.55 0 0 0 3 3.55v16.9c0 .3.25.55.55.55h16.9c.3 0 .55-.25.55-.55V3.55a.55.55 0 0 0-.55-.55zM8.34 18.34H5.67V9.75h2.67v8.59zM7 8.58a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zm11.34 9.76h-2.67v-4.18c0-1 0-2.28-1.39-2.28s-1.6 1.09-1.6 2.21v4.25h-2.67V9.75h2.56v1.17h.04a2.8 2.8 0 0 1 2.53-1.39c2.7 0 3.2 1.78 3.2 4.1v4.71z"/></svg></span>
+        <h3 style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; margin: 0; color: #F1F1F1">LinkedIn</h3>
+        <p style="font-size: 0.9375rem; line-height: 1.64; color: rgba(241,241,241,0.82); margin: 0; flex: 1 1 auto">Posicionamento profissional, trajetória e conteúdos institucionais.</p>
+        <a href="https://www.linkedin.com/in/jacquelinetirotti/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; align-self: flex-start; transition: transform 180ms ease, box-shadow 180ms ease">Acessar perfil</a>
+      </article>
+      <article data-gxlume="1" style="background: linear-gradient(155deg, #24487A 0%, #16294A 100%); border: 1px solid rgba(241,241,241,0.22); border-radius: 14px; padding: clamp(26px, 3vw, 34px); display: flex; flex-direction: column; gap: 16px">
+        <span aria-hidden="true" style="color: #CF9A44; display: flex"><svg viewBox="0 0 24 24" fill="currentColor" style="width: 26px; height: 26px" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 1 1 .77-5.06V9.69a5.67 5.67 0 0 0-.77-.05A5.66 5.66 0 1 0 15.54 15.3V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3a4.29 4.29 0 0 1-3.24-1.48z"/></svg></span>
+        <h3 style="font-family: var(--gx-display); font-size: 1.125rem; font-weight: 600; margin: 0; color: #F1F1F1">TikTok</h3>
+        <p style="font-size: 0.9375rem; line-height: 1.64; color: rgba(241,241,241,0.82); margin: 0; flex: 1 1 auto">Vídeos curtos, insights e conteúdos dinâmicos sobre perícia.</p>
+        <a href="https://tiktok.com/@peritatirotti" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; align-self: flex-start; transition: transform 180ms ease, box-shadow 180ms ease">Acessar perfil</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contato" aria-label="Entrar em contato" style="background: #12243C; color: #F1F1F1; padding: clamp(72px, 9vw, 128px) 0">
+  <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 24px">
+    <p style="display: inline-flex; align-items: center; gap: 14px; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #CF9A44; margin: 0 0 22px"><span aria-hidden="true" style="width: 42px; height: 1px; background: rgba(207,154,68,0.75)"></span>Próximo passo</p>
+    <h2 style="font-family: var(--gx-display); font-weight: 600; font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.14; letter-spacing: -0.018em; margin: 0 0 24px; max-width: 26ch; margin-left: auto; margin-right: auto; color: #F1F1F1; text-wrap: balance">Escolha a formação que corresponde ao seu momento na perícia</h2>
+    <p style="font-size: 1.0625rem; line-height: 1.72; color: rgba(241,241,241,0.8); margin: 0; max-width: 58ch">Se preferir, fale com a equipe pelo WhatsApp: indicamos o curso mais adequado ao seu perfil e à sua experiência.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px 18px; justify-content: center">
+      <a href="#cursos" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: linear-gradient(150deg, #DBA84E, #C08A34); border: 1px solid rgba(207,154,68,0.9); box-shadow: 0 10px 26px rgba(24,28,35,0.16); color: #181C23; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; transition: transform 180ms ease, box-shadow 180ms ease" data-gxh="24">Conhecer os cursos</a>
+      <a href="https://wa.me/5561984133386?text=Oi%2C%20vim%20do%20site%20e%20quero%20saber%20mais%20sobre%20as%20forma%C3%A7%C3%B5es%20do%20Perito%20Certificado" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; background: rgba(241,241,241,0.09); backdrop-filter: blur(14px) saturate(130%); -webkit-backdrop-filter: blur(14px) saturate(130%); border: 1px solid rgba(241,241,241,0.34); color: #F1F1F1; padding: 15px 28px; border-radius: 999px; font-size: 0.9375rem; font-weight: 600; transition: background 180ms ease, transform 180ms ease" data-gxh="25">Falar com a equipe</a>
+    </div>
+  </div>
+</section>
+
+<footer aria-label="Rodapé" style="background: #0E1B2E; color: #F1F1F1; padding: clamp(56px, 7vw, 88px) 0 clamp(28px, 3.5vw, 40px)">
+  <div style="width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem)">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: clamp(32px, 4vw, 56px)">
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <img src="https://peritocertificado.com/wp-content/uploads/2026/09/perito-certificado-logo.png" alt="Perito Certificado" width="1576" height="457" style="width: 132px; height: auto">
+        <p style="font-size: 0.9375rem; line-height: 1.66; color: rgba(241,241,241,0.66); margin: 0; max-width: 34ch">Formando profissionais com mais técnica, clareza e posicionamento para atuar na perícia.</p>
+        <p style="font-size: 0.9375rem; line-height: 1.6; color: rgba(241,241,241,0.52); margin: 0; max-width: 34ch">CNPJ 47.459.863/0001-95</p>
+        <address style="font-size: 0.9375rem; line-height: 1.6; font-style: normal; color: rgba(241,241,241,0.52); margin: 0; max-width: 34ch">SCS Quadra 02, Bloco D, Lote 03<span style="display: block">Edifício Oscar Niemeyer, Sala 1206</span><span style="display: block">Brasília/DF — CEP 70316-900</span></address>
+      </div>
+      <div>
+        <h3 style="font-family: var(--gx-display); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #CF9A44; margin: 0 0 18px">Links rápidos</h3>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+          <li><a href="#hero" style="font-size: 1rem; color: rgba(241,241,241,0.66)" data-gxh="26">Início</a></li>
+          <li><a href="#cursos" style="font-size: 1rem; color: rgba(241,241,241,0.66)" data-gxh="27">Cursos</a></li>
+          <li><a href="#depoimentos" style="font-size: 1rem; color: rgba(241,241,241,0.66)" data-gxh="28">Depoimentos</a></li>
+          <li><a href="#duvidas" style="font-size: 1rem; color: rgba(241,241,241,0.66)" data-gxh="29">Dúvidas frequentes</a></li>
+          <li><a href="https://wa.me/5561984133386?text=Oi%2C%20vim%20do%20site%20e%20quero%20saber%20mais%20sobre%20as%20forma%C3%A7%C3%B5es%20do%20Perito%20Certificado" target="_blank" rel="noopener noreferrer" style="font-size: 1rem; color: rgba(241,241,241,0.66)" data-gxh="30">Contato</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-family: var(--gx-display); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #CF9A44; margin: 0 0 18px">Formações</h3>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+          <li><a href="https://peritocertificado.com/grafoexpert/" target="_blank" rel="noopener noreferrer" style="font-size: 1rem; line-height: 1.45; color: rgba(241,241,241,0.66)" data-gxh="60">Grafo Expert</a></li>
+          <li><a href="https://peritocertificado.com/docexpert/" target="_blank" rel="noopener noreferrer" style="font-size: 1rem; line-height: 1.45; color: rgba(241,241,241,0.66)" data-gxh="61">Doc Expert</a></li>
+          <li><a href="https://peritocertificado.com/metodografodoc/" target="_blank" rel="noopener noreferrer" style="font-size: 1rem; line-height: 1.45; color: rgba(241,241,241,0.66)" data-gxh="62">Método Grafodoc</a></li>
+          <li><a href="https://peritocertificado.com/grafodocnapratica/" target="_blank" rel="noopener noreferrer" style="font-size: 1rem; line-height: 1.45; color: rgba(241,241,241,0.66)" data-gxh="63">Grafodoc na Prática</a></li>
+          <li><a href="https://peritocertificado.com/docdigital/" target="_blank" rel="noopener noreferrer" style="font-size: 1rem; line-height: 1.45; color: rgba(241,241,241,0.66)" data-gxh="64">Doc Digital na Prática</a></li>
+          <li><a href="https://peritocertificado.com/expertemcedulas/" target="_blank" rel="noopener noreferrer" style="font-size: 1rem; line-height: 1.45; color: rgba(241,241,241,0.66)" data-gxh="65">Expert em Cédulas</a></li>
+          <li><a href="https://peritocertificado.com/assistenciatecnica/" target="_blank" rel="noopener noreferrer" style="font-size: 1rem; line-height: 1.45; color: rgba(241,241,241,0.66)" data-gxh="66">Expert em Assistência Técnica</a></li>
+          <li><a href="https://peritocertificado.com/manualpraticografo/" target="_blank" rel="noopener noreferrer" style="font-size: 1rem; line-height: 1.45; color: rgba(241,241,241,0.66)" data-gxh="67">Manual Prático da Análise Grafotécnica</a></li>
+          <li><a href="https://peritocertificado.com/manualdocdigital/" target="_blank" rel="noopener noreferrer" style="font-size: 1rem; line-height: 1.45; color: rgba(241,241,241,0.66)" data-gxh="68">Manual da Perícia em Documentos Digitais</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-family: var(--gx-display); font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #CF9A44; margin: 0 0 18px">Contato</h3>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 1rem; line-height: 1.5; color: rgba(241,241,241,0.66)">
+          <li>WhatsApp: <a href="https://wa.me/5561984133386?text=Oi%2C%20vim%20do%20site%20e%20quero%20saber%20mais%20sobre%20as%20forma%C3%A7%C3%B5es%20do%20Perito%20Certificado" target="_blank" rel="noopener noreferrer" style="color: rgba(241,241,241,0.66)" data-gxh="37">(61) 8413-3386</a></li>
+          <li>Brasília, DF — Brasil</li>
+          <li>Instagram: <a href="https://instagram.com/peritatirotti" target="_blank" rel="noopener noreferrer" style="color: rgba(241,241,241,0.66)" data-gxh="38">@peritatirotti</a></li>
+          <li>TikTok: <a href="https://tiktok.com/@peritatirotti" target="_blank" rel="noopener noreferrer" style="color: rgba(241,241,241,0.66)" data-gxh="39">@peritatirotti</a></li>
+          <li>YouTube: <a href="https://www.youtube.com/@peritatirotti" target="_blank" rel="noopener noreferrer" style="color: rgba(241,241,241,0.66)" data-gxh="40">@peritatirotti</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top: clamp(36px, 4.5vw, 56px); padding-top: 24px; border-top: 1px solid rgba(241,241,241,0.16); display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; justify-content: center">
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 12px 24px">
+        <p style="font-size: 0.875rem; color: rgba(241,241,241,0.5); margin: 0">&copy; Perito Certificado. Todos os direitos reservados.</p>
+        <a href="https://peritocertificado.com/termos-e-condicoes" target="_blank" rel="noopener noreferrer" style="font-size: 0.875rem; color: rgba(241,241,241,0.5)" data-gxh="42">Termos e Condições</a>
+        <a href="https://peritocertificado.com/politicadeprivacidade" target="_blank" rel="noopener noreferrer" style="font-size: 0.875rem; color: rgba(241,241,241,0.5)" data-gxh="43">Política de Privacidade</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+<script>
+
+(function(){
+  var root = document.getElementById('gx-lp');
+  if (!root) return;
+  try {
+
+  function icons(){ if (window.lucide && window.lucide.createIcons) { try { window.lucide.createIcons(); } catch(e){} } }
+  var esp = setInterval(function(){ if (window.lucide) { clearInterval(esp); icons(); } }, 250);
+  icons();
+
+  function nav(){
+    var d = window.innerWidth >= 1000 ? 'inline-flex' : 'none';
+    root.querySelectorAll('[data-gxnav="1"]').forEach(function(a){ a.style.display = d; });
+  }
+  nav();
+  window.addEventListener('resize', nav);
+
+  var navLinks = Array.prototype.slice.call(root.querySelectorAll('[data-gxnav="1"]'));
+  var navAlvos = navLinks.map(function(a){ return root.querySelector(a.getAttribute('href')); });
+  function ativo(){
+    var melhor = -1, y = window.scrollY + 140;
+    navAlvos.forEach(function(sec, i){ if (sec && sec.offsetTop <= y) melhor = i; });
+    navLinks.forEach(function(a, i){ a.classList.toggle('is-ativo', i === melhor); });
+  }
+
+  var hdr = root.querySelector('[data-gxhdr]');
+  function topo(){
+    if (!hdr) return;
+    var s = window.scrollY > 40;
+    hdr.style.borderBottomColor = s ? 'rgba(24,28,35,0.14)' : 'transparent';
+    hdr.style.boxShadow = s ? '0 1px 16px rgba(24,28,35,0.06)' : 'none';
+  }
+
+  var mBtns = Array.prototype.slice.call(root.querySelectorAll('[data-gxmod]'));
+  var mPans = Array.prototype.slice.call(root.querySelectorAll('[data-modpanel]'));
+  function modulo(i){
+    mBtns.forEach(function(b, j){
+      var on = j === i;
+      b.style.background = on ? 'rgba(207,154,68,0.12)' : 'transparent';
+      b.style.borderLeftColor = on ? '#CF9A44' : 'transparent';
+      b.setAttribute('aria-expanded', on ? 'true' : 'false');
+    });
+    mPans.forEach(function(p, j){ p.style.display = j === i ? 'flex' : 'none'; });
+    icons();
+  }
+  mBtns.forEach(function(b, i){ b.addEventListener('click', function(){ modulo(i); }); });
+  if (mBtns.length) modulo(0);
+
+  var fBtns = Array.prototype.slice.call(root.querySelectorAll('[data-gxi]'));
+  var fPans = Array.prototype.slice.call(root.querySelectorAll('[data-faqpanel]'));
+  var aberto = -1;
+  function faq(i){
+    aberto = (aberto === i) ? -1 : i;
+    fBtns.forEach(function(b, j){
+      var on = j === aberto;
+      var card = b.parentNode;
+      b.setAttribute('aria-expanded', on ? 'true' : 'false');
+      card.style.background = on ? 'rgba(207,154,68,0.12)' : 'rgba(255,255,255,0.55)';
+      card.style.borderColor = on ? 'rgba(207,154,68,0.55)' : 'rgba(24,28,35,0.16)';
+      var txt = b.firstElementChild, sinal = b.lastElementChild;
+      if (txt) txt.style.color = on ? '#8A6224' : '#181C23';
+      if (sinal) sinal.textContent = on ? '\u2212' : '+';
+      if (fPans[j]) fPans[j].style.display = on ? 'block' : 'none';
+    });
+  }
+  fBtns.forEach(function(b, i){ b.addEventListener('click', function(){ faq(i); }); });
+  var caixaFaq = fBtns.length ? fBtns[0].parentNode.parentNode : null;
+  if (caixaFaq) caixaFaq.addEventListener('keydown', function(e){
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    var i = fBtns.indexOf(document.activeElement);
+    if (i < 0) return;
+    e.preventDefault();
+    fBtns[e.key === 'ArrowDown' ? (i + 1) % fBtns.length : (i - 1 + fBtns.length) % fBtns.length].focus();
+  });
+
+  var form = root.querySelector('form');
+  if (form) {
+    var tel = form.querySelector('input[name="phone"], input[type="tel"]');
+    if (tel) tel.addEventListener('input', function(){
+      var d = (tel.value || '').replace(/\D/g, '').slice(0, 11), v;
+      if (d.length <= 2) v = d.length ? '(' + d : '';
+      else if (d.length <= 6) v = '(' + d.slice(0,2) + ') ' + d.slice(2);
+      else if (d.length <= 10) v = '(' + d.slice(0,2) + ') ' + d.slice(2,6) + '-' + d.slice(6);
+      else v = '(' + d.slice(0,2) + ') ' + d.slice(2,7) + '-' + d.slice(7);
+      tel.value = v;
+    });
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var m = form.querySelector('[data-gxmsg]');
+      if (!m) {
+        m = document.createElement('p');
+        m.setAttribute('data-gxmsg', '1');
+        m.style.cssText = 'font-size:0.9375rem;line-height:1.6;color:#8A6224;margin:0';
+        form.appendChild(m);
+      }
+      m.textContent = 'Contato recebido. A equipe responde pelo WhatsApp em até 1 dia útil.';
+    });
+  }
+
+  var contadores = Array.prototype.slice.call(root.querySelectorAll('[data-gxconta]'));
+  if (contadores.length && window.IntersectionObserver) {
+    var ioNum = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        ioNum.unobserve(el);
+        var bruto = el.getAttribute('data-gxconta');
+        var alvo = parseInt(bruto.replace(/\D/g, ''), 10);
+        var pontos = bruto.indexOf('.') > -1;
+        var ini = performance.now(), dur = 1500;
+        el.textContent = '+0';
+        function passo(t){
+          var p = Math.min(1, (t - ini) / dur);
+          var v = Math.round(alvo * (1 - Math.pow(1 - p, 3)));
+          el.textContent = '+' + (pontos ? v.toLocaleString('pt-BR') : v);
+          if (p < 1) requestAnimationFrame(passo); else el.textContent = bruto;
+        }
+        requestAnimationFrame(passo);
+      });
+    }, { threshold: 0.45 });
+    contadores.forEach(function(el){ ioNum.observe(el); });
+  }
+
+  var barra = root.querySelector('[data-gxprog]');
+  function prog(){
+    if (!barra) return;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    barra.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, window.scrollY / h) : 0) + ')';
+  }
+
+  function trilhos(){
+    var sec = document.getElementById('depoimentos');
+    if (!sec) return;
+    var r = sec.getBoundingClientRect();
+    var t = Math.max(0, Math.min(1, (window.innerHeight - r.top) / (window.innerHeight + r.height)));
+    var a = root.querySelector('[data-gxtrack="a"]'), b = root.querySelector('[data-gxtrack="b"]');
+    if (a) a.style.transform = 'translateX(' + (-t * (a.scrollWidth / 2)) + 'px)';
+    if (b) b.style.transform = 'translateX(' + (-(b.scrollWidth / 2) + t * (b.scrollWidth / 2)) + 'px)';
+  }
+
+  var raf = null;
+  function loop(){ raf = null; topo(); prog(); trilhos(); ativo(); }
+  function tick(){ if (!raf) raf = requestAnimationFrame(loop); }
+  window.addEventListener('scroll', tick, { passive: true });
+  window.addEventListener('resize', tick);
+  loop();
+
+  var mobile = window.innerWidth <= 1024;
+  var reduz = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) || mobile;
+  if (mobile) {
+    // O Elementor envolve o widget em vários containers com width e padding; zera até o body
+    var pai = root.parentElement;
+    while (pai && pai !== document.body) {
+      pai.style.setProperty('max-width', '100vw', 'important');
+      pai.style.setProperty('width', 'auto', 'important');
+      pai.style.setProperty('margin-left', '0', 'important');
+      pai.style.setProperty('margin-right', '0', 'important');
+      pai.style.setProperty('padding-left', '0', 'important');
+      pai.style.setProperty('padding-right', '0', 'important');
+      pai.style.setProperty('overflow-x', 'hidden', 'important');
+      pai = pai.parentElement;
+    }
+    document.body.style.setProperty('overflow-x', 'hidden', 'important');
+    document.body.style.setProperty('max-width', '100vw', 'important');
+    // clientWidth exclui a barra de rolagem; innerWidth não
+    var alinhar = function(){
+      if (!window.innerWidth) return;
+      var larg = document.documentElement.clientWidth;
+      root.style.setProperty('width', larg + 'px', 'important');
+      var hdr = root.querySelector('[data-gxhdr]');
+      if (hdr) { hdr.style.setProperty('right', 'auto', 'important'); hdr.style.setProperty('width', larg + 'px', 'important'); }
+      root.style.setProperty('margin-left', '0', 'important');
+      var r = root.getBoundingClientRect();
+      if (Math.abs(r.left) > 0.5) root.style.setProperty('margin-left', (-r.left) + 'px', 'important');
+    };
+    alinhar();
+    window.addEventListener('resize', alinhar);
+    window.addEventListener('orientationchange', alinhar);
+    window.addEventListener('load', alinhar);
+    if (window.ResizeObserver) { try { new ResizeObserver(alinhar).observe(document.documentElement); } catch (e) {} }
+    root.querySelectorAll('[data-gxr]').forEach(function(el){
+      el.removeAttribute('data-gxr');
+      el.classList.remove('is-out');
+      el.style.opacity = '';
+      el.style.transform = '';
+      el.style.filter = '';
+    });
+  }
+  if (!reduz) {
+    var io = new IntersectionObserver(function(ents){
+      ents.forEach(function(e){
+        var el = e.target;
+        if (e.isIntersecting) {
+          el.style.willChange = 'opacity, transform';
+          el.classList.remove('is-out');
+          el.classList.add('is-in');
+          clearTimeout(el._wcT);
+          el._wcT = setTimeout(function(){ el.style.willChange = 'auto'; }, 1400);
+        } else if (e.boundingClientRect.top < 0) {
+          el.classList.remove('is-in');
+          el.classList.add('is-out');
+        }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+
+    root.querySelectorAll('section:not(#hero), footer').forEach(function(sec){
+      var box = sec.firstElementChild && sec.firstElementChild.children.length ? sec.firstElementChild : sec;
+      var kids = Array.prototype.slice.call(box.children);
+      var alvos = kids.length > 1 ? kids : Array.prototype.slice.call(box.firstElementChild ? box.firstElementChild.children : []);
+      alvos.forEach(function(el, i){
+        if (el.dataset.gxr || el.classList.contains('gx-progress')) return;
+        var st = getComputedStyle(el);
+        if (st.position === 'sticky' || st.position === 'fixed') return;
+        el.dataset.gxr = (el.tagName === 'IMG' || el.tagName === 'FIGURE') ? 'zoom' : 'up';
+        el.style.setProperty('--gxd', Math.min(i, 6) * 90 + 'ms');
+        io.observe(el);
+      });
+    });
+  }
+
+  } catch (err) { if (window.console) console.warn('gx', err); }
+  try {
+  root.querySelectorAll('[data-gxlume]').forEach(function(el){
+    el.classList.add('gx-lume');
+    var pend = null;
+    el.addEventListener('pointermove', function(ev){
+      var x = ev.clientX, y = ev.clientY;
+      if (pend) return;
+      pend = requestAnimationFrame(function(){
+        pend = null;
+        var r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', (x - r.left) + 'px');
+        el.style.setProperty('--my', (y - r.top) + 'px');
+      });
+    }, { passive: true });
+  });
+  } catch (err) { if (window.console) console.warn('gx', err); }
+})();
+
+</script>
+</body>
+</html>
