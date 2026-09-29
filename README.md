@@ -2,8 +2,6 @@
   <img src="https://peritocertificado.com/wp-content/uploads/2026/09/perito-certificado-logo.png" alt="Perito Certificado" width="220">
 </p>
 
-<h1 align="center">Perito Certificado</h1>
-
 <p align="center">
   Site institucional e landing pages de uma plataforma de formação em perícia judicial.
 </p>
